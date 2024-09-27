@@ -34,6 +34,7 @@ r_filtered = [x for x in request_json['changes'] if ( x['type'] == 'MTT') ]
 # This loop runs tests for each one of the mapping tasks
 for x in r_filtered:
     BODY = {"@type": "job","taskId": x['appContextId'],"taskType": "MTT"}
+    print("Running Payload:", json.dumps(BODY, indent=2)
     t = requests.post(URL + "/api/v2/job/", headers = HEADERS_V2, json = BODY )
 
     if t.status_code != 200:
