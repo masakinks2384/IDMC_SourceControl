@@ -27,10 +27,10 @@ if r.status_code != 200:
     sys.exit(99)
     
 request_json = r.json()
-
+print("Response Commited MCTs:",request_json)
 # Only get Mapping Tasks
 r_filtered = [x for x in request_json['changes'] if ( x['type'] == 'MTT') ]
-
+print("MCTS to RUN:",r_filtered)
 # This loop runs tests for each one of the mapping tasks
 for x in r_filtered:
     BODY = {"@type": "job","taskId": x['appContextId'],"taskType": "MTT"}
