@@ -1,0 +1,23 @@
+{
+  "objectInfo" : {
+    "id" : "5l1kTURrTkJgRBlB63oBQN",
+    "name" : "Mapping Tasks",
+    "type" : "Folder",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2024-09-27T22:18:42.818Z",
+  "objectRefs" : [ ]
+}
