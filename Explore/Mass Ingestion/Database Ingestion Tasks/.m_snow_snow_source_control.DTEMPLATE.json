@@ -16,14 +16,14 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "",
+        "description" : "aaaaaaaaa",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
     }
   },
   "dataFileExtension" : "zip",
-  "updateTime" : "2024-09-27T05:15:35.281Z",
+  "updateTime" : "2024-09-27T05:55:58.875Z",
   "objectRefs" : [ {
     "id" : "1JaIBb4bmFHkA0FQfvzk0i",
     "name" : "MN_Snowflake_GCS_CMI",
