@@ -112,9 +112,9 @@ jobs:
           git pull origin uat  # Ensure you are on the uat branch
           echo "UAT_COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
 
-      #- name: Login to UAT environment
-      #  run: |
-      #    python ./scripts/infa_login.py
+      - name: Login to UAT environment
+        run: |
+          python ./scripts/infa_login.py
           
       #- name: Sync and test UAT deployment
       #  run: python ./scripts/infa_update_and_test.py
