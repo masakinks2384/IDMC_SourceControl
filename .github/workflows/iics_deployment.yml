@@ -88,11 +88,7 @@ jobs:
           git checkout uat
           git pull origin uat
 
-      - name: Cherry-pick Commit from Dev
+      - name: Cherry-pick Commit from Dev and Push to UAT
         run: |
-          git cherry-pick -X theirs ${{ env.COMMIT_HASH }} || echo "Cherry-pick failed"
-
-      - name: Push to UAT Branch
-        run: |
-          git status
+          git cherry-pick --strategy=recursive -X theirs ${{ env.COMMIT_HASH }} || echo "Cherry-pick failed"
           git push https://${{ secrets.GITHUB_TOKEN }}@github.com/masakinks2384/IDMC_SourceControl.git uat --force
