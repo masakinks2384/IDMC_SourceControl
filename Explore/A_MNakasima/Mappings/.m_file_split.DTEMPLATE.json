@@ -16,14 +16,14 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "",
+        "description" : "aaa",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
     }
   },
   "dataFileExtension" : "zip",
-  "updateTime" : "2024-09-27T05:28:54.829Z",
+  "updateTime" : "2024-09-27T05:40:18.581Z",
   "objectRefs" : [ {
     "id" : "0J1mCQ1HPkehZAYcc3doem",
     "name" : "MN_LocalHost_FF",
