@@ -28,8 +28,8 @@ if r.status_code != 200:
     
 request_json = r.json()
 print("Response Commited MCTs:",request_json)
-# Only get Mapping Tasks
-r_filtered = [x for x in request_json['changes'] if ( x['type'] == 'MTT') ]
+# Only get Mapping Tasks and different from action:deleted
+r_filtered = [x for x in request_json['changes'] if x['type'] == 'MTT' and x['action'] != 'DELETED']
 print("MCTS to RUN:",r_filtered)
 # This loop runs tests for each one of the mapping tasks
 for x in r_filtered:
