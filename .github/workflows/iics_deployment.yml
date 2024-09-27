@@ -99,7 +99,7 @@ jobs:
       # Push the changes to the UAT branch
       - name: Push to UAT Branch
         run: |
-          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/masakinks2384/${{ github.repository }}.git uat --force
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}/IDMC_SourceControl.git uat --force
 
       - name: Verify Commit Log
         run: |
