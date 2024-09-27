@@ -48,7 +48,7 @@ for x in r_filtered:
     STATE=0
     
     while STATE == 0:
-        time.sleep(60)
+        time.sleep(30)
         a = requests.get(URL + "/api/v2/activity/activityLog" + PARAMS, headers = HEADERS_V2)
         
         activity_log = a.json()
