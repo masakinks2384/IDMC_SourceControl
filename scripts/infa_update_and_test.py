@@ -18,7 +18,7 @@ UAT_COMMIT_HASH = os.environ['UAT_COMMIT_HASH']
 HEADERS = {"Content-Type": "application/json; charset=utf-8", "INFA-SESSION-ID": UAT_SESSION_ID }
 HEADERS_V2 = {"Content-Type": "application/json; charset=utf-8", "icSessionId": UAT_SESSION_ID }
 
-BODY={ "commitHash": UAT_COMMIT_HASH, "relaxObjectSpecificationValidation": "true" }
+BODY={ "commitHash": UAT_COMMIT_HASH}
 
 print("Syncing the commit " + UAT_COMMIT_HASH + " to the UAT repo")
 
