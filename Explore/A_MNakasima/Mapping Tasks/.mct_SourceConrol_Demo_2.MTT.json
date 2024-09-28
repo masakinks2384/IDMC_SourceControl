@@ -1,0 +1,88 @@
+{
+  "objectInfo" : {
+    "id" : "a9mqhV8ZJZhiaoBDPTb4ex",
+    "name" : "mct_SourceConrol_Demo_2",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CHZJ0Z0000000000KP"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "testv21",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2024-09-28T01:33:08.063Z",
+  "objectRefs" : [ {
+    "id" : "fm5zDCfxvkSiZ4b1B6bMaH",
+    "name" : "Informatica Cloud Hosted Agent",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "025000000000002"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "2CL1gzxKwyvjOFfBjX8suO",
+    "name" : "m_snow_snow_source_control",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CHZJ17000000000092"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "aaaaaaaaa",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Mass Ingestion/Database Ingestion Tasks"
+  }, {
+    "id" : "1JaIBb4bmFHkA0FQfvzk0i",
+    "name" : "MN_Snowflake_GCS_CMI",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CHZJ0B00000000000A"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "db=GCSCLIENT_MEMORY_LIMIT=7000CLIENT_METADATA_REQUEST_USE_CONNECTION_CTX=TRUECLIENT_ENABLE_CONSERVATIVE_MEMORY_USAGE=FALSE",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}
