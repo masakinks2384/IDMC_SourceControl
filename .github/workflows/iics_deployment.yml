@@ -92,3 +92,21 @@ jobs:
         run: |
           git cherry-pick --strategy=recursive -X theirs ${{ env.COMMIT_HASH }} || echo "Cherry-pick failed"
           git push https://${{ secrets.GITHUB_TOKEN }}@github.com/masakinks2384/IDMC_SourceControl.git uat --force
+      
+      - name: Verify Commit Log
+        run: |
+          git checkout uat
+          git log -1
+      
+      # Get the latest commit hash in the uat branch
+      - name: Get latest UAT commit hash
+        run: |
+          git pull origin uat  # Ensure you are on the uat branch
+          echo "UAT_COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
+
+      - name: Login to UAT environment
+        run: |
+          python ./scripts/infa_login.py
+          
+      - name: Sync and test UAT deployment
+        run: python ./scripts/infa_update_and_test.py
