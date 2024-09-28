@@ -1,3 +1,10 @@
+# This sample source code is provided as a demonstration of potential solutions for 
+# IDMC source control deployment pipeline and is intended for educational purposes only. 
+# The code is supplied "as-is," without any warranties or guarantees, and is not officially 
+# supported by Informatica. Users who utilize this code, in part or in full, 
+# or create derivatives, do so at their own risk. Informatica disclaims any and 
+# all liabilities resulting from its use, to the maximum extent allowed by law.
+
 import requests
 import os
 
