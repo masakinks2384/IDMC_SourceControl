@@ -104,6 +104,12 @@ jobs:
           git pull origin uat  # Ensure you are on the uat branch
           echo "UAT_COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
 
+      # Switch to main branch
+      - name: Switch to main branch
+        run: |
+          git fetch origin main
+          git checkout main
+          
       - name: Login to UAT environment
         run: |
           python ./scripts/infa_login.py
