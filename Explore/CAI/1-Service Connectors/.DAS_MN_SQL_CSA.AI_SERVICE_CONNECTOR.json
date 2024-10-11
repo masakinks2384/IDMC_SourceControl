@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "5q86pxhQ4pHjd6Er9zz0A7",
+    "name" : "DAS_MN_SQL_CSA",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "oGY2KsJlv58pIO3-gt-4043575-2023-03-22T20:09:03.234Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-10-11T17:50:04.418Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

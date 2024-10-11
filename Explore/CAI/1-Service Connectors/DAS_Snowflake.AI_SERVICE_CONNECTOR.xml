@@ -1,0 +1,187 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>1w1M0FKi9zhFtyb-gt-3763473-2023-03-22T20:08:59.838Z::svc.xml</types1:EntryId>
+      <types1:Name>DAS_Snowflake</types1:Name>
+      <types1:ParentFlowIds>gkRCU7uMydx2CGe-gt-3842922-2023-03-22T20:09:06.107Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>masaki.dev</types1:CreatedBy>
+      <types1:CreationDate>2023-03-22T20:09:00Z</types1:CreationDate>
+      <types1:ModifiedBy>masaki.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2023-10-12T17:08:17Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>masaki.dev</types1:PublishedBy>
+      <types1:PublicationDate>2023-10-12T17:08:34Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/DAS_Snowflake/DAS_Snowflake_svcDef.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="true"
+                            debug="false"
+                            displayName="DAS_Snowflake"
+                            label=""
+                            name="DAS_Snowflake"
+                            plugin="DAS"
+                            uuid="904ee780-9c94-43df-8984-2691af67448f">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description="The fully qualified Java class name of the JDBC driver to be used."
+                                    label="JDBC Driver"
+                                    masked="false"
+                                    name="driver"
+                                    required="true"
+                                    testWith="net.snowflake.client.jdbc.SnowflakeDriver"
+                                    type="string"/>
+               <connectionAttribute description="The connection URL passed to the JDBC driver when establishing a connection."
+                                    label="JDBC URL"
+                                    masked="false"
+                                    name="jdbcUrl"
+                                    required="true"
+                                    testWith="jdbc:snowflake://Informatica.snowflakecomputing.com"
+                                    type="string"/>
+               <connectionAttribute description="The connection username passed to the JDBC driver when establishing a connection."
+                                    label="Username"
+                                    masked="false"
+                                    name="username"
+                                    required="true"
+                                    testWith="GCSTEAM"
+                                    type="string"/>
+               <connectionAttribute description="The connection password passed to the JDBC driver when establishing a connection."
+                                    label="Password"
+                                    masked="true"
+                                    name="password"
+                                    required="true"
+                                    testWith=""
+                                    type="string"/>
+               <connectionAttribute description="The initial number of connections that are created when the pool is started."
+                                    group="Advanced"
+                                    label="Initial Size"
+                                    masked="false"
+                                    name="initialSize"
+                                    required="false"
+                                    testWith="5"
+                                    type="number"/>
+               <connectionAttribute description="The maximum number of active connections that can be allocated from this pool at the same time. If this value is negative, there is no limit."
+                                    group="Advanced"
+                                    label="Max Active"
+                                    masked="false"
+                                    name="maxActive"
+                                    required="false"
+                                    testWith="10"
+                                    type="number"/>
+               <connectionAttribute description="The minimum number of connections that can remain idle in the pool without extra ones being created. A value of zero means that none will be created."
+                                    group="Advanced"
+                                    label="Min Idle"
+                                    masked="false"
+                                    name="minIdle"
+                                    required="false"
+                                    testWith="1"
+                                    type="number"/>
+               <connectionAttribute description="The maximum number of connections that can remain idle in the pool without extra ones being released,. If this value is negative, there is no limit"
+                                    group="Advanced"
+                                    label="Max Idle"
+                                    masked="false"
+                                    name="maxIdle"
+                                    required="false"
+                                    testWith="5"
+                                    type="number"/>
+               <connectionAttribute description="The maximum number of milliseconds that the pool waits for a connection if there are none available. A value of -1 means to wait indefinitely."
+                                    group="Advanced"
+                                    label="Max Wait"
+                                    masked="false"
+                                    name="maxWait"
+                                    required="false"
+                                    testWith=""
+                                    type="number"/>
+               <connectionAttribute description="The default state of connections created by this pool, which is one of the following:    0 - NONE    1 - READ_UNCOMMITTED    2 - READ_COMMITTED    4 - REPEATABLE_READ    8 - SERIALIZABLE"
+                                    group="Advanced"
+                                    label="Transaction Isolation Level"
+                                    masked="false"
+                                    name="defaultTransactionIsolation"
+                                    required="false"
+                                    testWith=""
+                                    type="string"/>
+               <connectionAttribute description="The minimum amount of time (millis) an object may sit idle in the pool before it is eligible for eviction by the idle object evictor (if an evictor exists."
+                                    group="Advanced"
+                                    label="Min Evictable Idle Time"
+                                    masked="false"
+                                    name="minEvictableIdleTimeMillis"
+                                    required="false"
+                                    testWith=""
+                                    type="number"/>
+               <connectionAttribute description="The number of objects to examine during each run of the idle object evictor thread (if it exists)."
+                                    group="Advanced"
+                                    label="Num Tests Per Eviction Run"
+                                    masked="false"
+                                    name="numTestsPerEvictionRun"
+                                    required="false"
+                                    testWith=""
+                                    type="number"/>
+               <connectionAttribute description="When checked, objects are validated before being borrowed from the pool. If the object cannot be validated, it is dropped from the pool, and an attempt is made to borrow another."
+                                    group="Advanced"
+                                    label="Test On Borrow"
+                                    masked="false"
+                                    name="testOnBorrow"
+                                    required="false"
+                                    testWith="false"
+                                    type="boolean"/>
+               <connectionAttribute description="When checked, objects are validated before being returned to the pool."
+                                    group="Advanced"
+                                    label="Test On Return"
+                                    masked="false"
+                                    name="testOnReturn"
+                                    required="false"
+                                    testWith="false"
+                                    type="boolean"/>
+               <connectionAttribute description="When checked, objects are validated by the idle object evictor (if one exists). If the object cannot be validated, it is dropped from the pool."
+                                    group="Advanced"
+                                    label="Test While Idle"
+                                    masked="false"
+                                    name="testWhileIdle"
+                                    required="false"
+                                    testWith="false"
+                                    type="boolean"/>
+               <connectionAttribute description="The SQL query that will validate connections from this pool before returning them to the caller. If specified, this query must be an SQL SELECT statement that returns at least one row."
+                                    group="Advanced"
+                                    label="Validation Query"
+                                    masked="false"
+                                    name="validationQuery"
+                                    required="false"
+                                    testWith=""
+                                    type="string"/>
+            </connectionAttributes>
+            <dasActions>
+               <action category="DAS_Snowflake" label="GetAccounts" name="GetAccounts">
+                  <description/>
+                  <input>
+                     <parameter label="i_StoreCode"
+                                name="i_StoreCode"
+                                required="false"
+                                testWith="'CAL 56'"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <sqlStatement statementId="SQL Name 1">
+                        <statement>select sum (totalsalesamt) as TOTALSALES,date  from "GCS"."GCS_MN"."SALES" where STORECODE = {$i_StoreCode}
+group by storecode,state,date </statement>
+                     </sqlStatement>
+                  </binding>
+                  <output>
+                     <field description="" name="XML_out" type="string" xmlElement="."/>
+                  </output>
+               </action>
+            </dasActions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>3dFyGYGCFphf9uHsARIRkg</types1:GUID>
+      <types1:DisplayName>DAS_Snowflake</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-10-11T17:50:03.635Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
