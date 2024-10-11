@@ -1,0 +1,365 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>oGY2KsJlv58pIO3-gt-4043575-2023-03-22T20:09:03.234Z::svc.xml</types1:EntryId>
+      <types1:Name>DAS_MN_SQL_CSA</types1:Name>
+      <types1:ParentFlowIds>jIaa-gt-3842937-2023-03-22T20:09:06.159Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>masaki.dev</types1:CreatedBy>
+      <types1:CreationDate>2023-03-22T20:09:03Z</types1:CreationDate>
+      <types1:ModifiedBy>masaki.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2024-02-23T01:50:14Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>masaki.dev</types1:PublishedBy>
+      <types1:PublicationDate>2024-02-23T01:50:17Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/DAS_MN_SQL_CSA/DAS_MN_SQL_CSA_svcDef.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="true"
+                            debug="false"
+                            displayName="DAS_MN_SQL_CSA"
+                            label=""
+                            name="DAS_MN_SQL_CSA"
+                            plugin="DAS"
+                            uuid="1c3856c0-8d39-49a7-8e80-fa1b369db1b0">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description="The fully qualified Java class name of the JDBC driver to be used."
+                                    label="JDBC Driver"
+                                    masked="false"
+                                    name="driver"
+                                    required="true"
+                                    testWith="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+                                    type="string"/>
+               <connectionAttribute description="The connection URL passed to the JDBC driver when establishing a connection."
+                                    label="JDBC URL"
+                                    masked="false"
+                                    name="jdbcUrl"
+                                    required="true"
+                                    testWith="jdbc:sqlserver://localhost:1433;databaseName=CSA"
+                                    type="string"/>
+               <connectionAttribute description="The connection username passed to the JDBC driver when establishing a connection."
+                                    label="Username"
+                                    masked="false"
+                                    name="username"
+                                    required="true"
+                                    testWith="infa"
+                                    type="string"/>
+               <connectionAttribute description="The connection password passed to the JDBC driver when establishing a connection."
+                                    label="Password"
+                                    masked="true"
+                                    name="password"
+                                    required="true"
+                                    testWith=""
+                                    type="string"/>
+               <connectionAttribute description="The initial number of connections that are created when the pool is started."
+                                    group="Advanced"
+                                    label="Initial Size"
+                                    masked="false"
+                                    name="initialSize"
+                                    required="false"
+                                    testWith="5"
+                                    type="number"/>
+               <connectionAttribute description="The maximum number of active connections that can be allocated from this pool at the same time. If this value is negative, there is no limit."
+                                    group="Advanced"
+                                    label="Max Active"
+                                    masked="false"
+                                    name="maxActive"
+                                    required="false"
+                                    testWith="10"
+                                    type="number"/>
+               <connectionAttribute description="The minimum number of connections that can remain idle in the pool without extra ones being created. A value of zero means that none will be created."
+                                    group="Advanced"
+                                    label="Min Idle"
+                                    masked="false"
+                                    name="minIdle"
+                                    required="false"
+                                    testWith="1"
+                                    type="number"/>
+               <connectionAttribute description="The maximum number of connections that can remain idle in the pool without extra ones being released,. If this value is negative, there is no limit"
+                                    group="Advanced"
+                                    label="Max Idle"
+                                    masked="false"
+                                    name="maxIdle"
+                                    required="false"
+                                    testWith="5"
+                                    type="number"/>
+               <connectionAttribute description="The maximum number of milliseconds that the pool waits for a connection if there are none available. A value of -1 means to wait indefinitely."
+                                    group="Advanced"
+                                    label="Max Wait"
+                                    masked="false"
+                                    name="maxWait"
+                                    required="false"
+                                    testWith=""
+                                    type="number"/>
+               <connectionAttribute description="The default state of connections created by this pool, which is one of the following:    0 - NONE    1 - READ_UNCOMMITTED    2 - READ_COMMITTED    4 - REPEATABLE_READ    8 - SERIALIZABLE"
+                                    group="Advanced"
+                                    label="Transaction Isolation Level"
+                                    masked="false"
+                                    name="defaultTransactionIsolation"
+                                    required="false"
+                                    testWith=""
+                                    type="string"/>
+               <connectionAttribute description="The minimum amount of time (millis) an object may sit idle in the pool before it is eligible for eviction by the idle object evictor (if an evictor exists."
+                                    group="Advanced"
+                                    label="Min Evictable Idle Time"
+                                    masked="false"
+                                    name="minEvictableIdleTimeMillis"
+                                    required="false"
+                                    testWith=""
+                                    type="number"/>
+               <connectionAttribute description="The number of objects to examine during each run of the idle object evictor thread (if it exists)."
+                                    group="Advanced"
+                                    label="Num Tests Per Eviction Run"
+                                    masked="false"
+                                    name="numTestsPerEvictionRun"
+                                    required="false"
+                                    testWith=""
+                                    type="number"/>
+               <connectionAttribute description="When checked, objects are validated before being borrowed from the pool. If the object cannot be validated, it is dropped from the pool, and an attempt is made to borrow another."
+                                    group="Advanced"
+                                    label="Test On Borrow"
+                                    masked="false"
+                                    name="testOnBorrow"
+                                    required="false"
+                                    testWith="false"
+                                    type="boolean"/>
+               <connectionAttribute description="When checked, objects are validated before being returned to the pool."
+                                    group="Advanced"
+                                    label="Test On Return"
+                                    masked="false"
+                                    name="testOnReturn"
+                                    required="false"
+                                    testWith="false"
+                                    type="boolean"/>
+               <connectionAttribute description="When checked, objects are validated by the idle object evictor (if one exists). If the object cannot be validated, it is dropped from the pool."
+                                    group="Advanced"
+                                    label="Test While Idle"
+                                    masked="false"
+                                    name="testWhileIdle"
+                                    required="false"
+                                    testWith="false"
+                                    type="boolean"/>
+               <connectionAttribute description="The SQL query that will validate connections from this pool before returning them to the caller. If specified, this query must be an SQL SELECT statement that returns at least one row."
+                                    group="Advanced"
+                                    label="Validation Query"
+                                    masked="false"
+                                    name="validationQuery"
+                                    required="false"
+                                    testWith=""
+                                    type="string"/>
+            </connectionAttributes>
+            <dasActions>
+               <action category="DAS_MN_SQL_CSA"
+                       label="Retrieve_ISD_SALES"
+                       name="Retrieve_ISD_SALES">
+                  <description/>
+                  <input>
+                     <parameter label="InvoiceNbr"
+                                name="i_InvoiceNbr"
+                                required="true"
+                                testWith="1001001"
+                                type="int"/>
+                     <parameter label="i_InvoiceNbr2"
+                                name="i_InvoiceNbr2"
+                                required="false"
+                                testWith="1001002"
+                                type="int"/>
+                  </input>
+                  <binding>
+                     <sqlStatement statementId="SQL Name 1">
+                        <statement>Select StoreCode,State,Date,InvoiceNbr,Unit_price,SKU,SalesQty,Total,Tax,TotalSalesAmt from CSA.dbo.ISD_sales where InvoiceNbr = {$i_InvoiceNbr} or  InvoiceNbr =   {$i_InvoiceNbr2}</statement>
+                     </sqlStatement>
+                  </binding>
+                  <output>
+                     <field description="" name="Output_List" type="objectlist">
+                        <options>
+                           <option name="referenceTo">row</option>
+                        </options>
+                        <xquery>{for $i in /dataAccessResponse/row
+return&lt;row&gt;
+   {$i/storecode}
+   {$i/state}
+   {$i/date}
+   {$i/invoicenbr}
+   {$i/unit_price}
+   {$i/sku}
+   {$i/salesqty}
+   {$i/total}
+   {$i/tax}
+   {$i/totalsalesamt}
+&lt;/row&gt;}</xquery>
+                     </field>
+                     <field description="" name="Ouput_XML" type="string" xmlElement="."/>
+                  </output>
+               </action>
+               <action category="DAS_MN_SQL_CSA"
+                       label="Get_SF_CONTACT"
+                       name="Get_SF_CONTACT">
+                  <description/>
+                  <input>
+                     <parameter label="i_LASTNAME"
+                                name="i_LASTNAME"
+                                required="true"
+                                testWith="'Rogers'"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <sqlStatement statementId="SQL Name 1">
+                        <statement>SELECT [ID]
+      ,[ACCOUNTID]
+      ,[LASTNAME]
+      ,[FIRSTNAME]
+      ,[OTHERSTREET]
+      ,[EMAIL]
+  FROM [CSA].[dbo].[SF_CONTACT] where LASTNAME = {$i_LASTNAME}</statement>
+                     </sqlStatement>
+                  </binding>
+                  <output>
+                     <field description="" name="ID" property="id" type="string"/>
+                     <field description=""
+                            name="ACCOUNTID"
+                            property="accountid"
+                            type="string"/>
+                     <field description=""
+                            name="LASTNAME"
+                            property="lastname"
+                            type="string"/>
+                     <field description=""
+                            name="FIRSTNAME"
+                            property="firstname"
+                            type="string"/>
+                     <field description=""
+                            name="OTHERSTREET"
+                            property="otherstreet"
+                            type="string"/>
+                     <field description="" name="EMAIL" property="email" type="string"/>
+                  </output>
+               </action>
+               <action category="SF_Contact"
+                       label="SF_Contact_insert"
+                       name="SF_Contact_insert">
+                  <description/>
+                  <input>
+                     <parameter description=""
+                                label=""
+                                name="i_ID"
+                                required="true"
+                                testWith="003Dn000-SCTestCAI"
+                                type="string"/>
+                     <parameter description=""
+                                label=""
+                                name="i_ISDELETED"
+                                required="false"
+                                testWith="0"
+                                type="int"/>
+                     <parameter description=""
+                                label=""
+                                name="i_ACCOUNTID"
+                                required="false"
+                                testWith="001Dn0000086wFNIAY"
+                                type="string"/>
+                     <parameter description=""
+                                label=""
+                                name="i_LASTNAME"
+                                required="false"
+                                testWith="Nakasima"
+                                type="string"/>
+                     <parameter description=""
+                                label=""
+                                name="i_FIRSTNAME"
+                                required="false"
+                                testWith="Masaki"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <sqlStatement columnCase="unchanged" statementId="SQL Name 1">
+                        <statement>INSERT INTO [CSA].[dbo].[SF_CONTACT]  ([ACCOUNTID]
+      ,[LASTNAME]
+      ,[FIRSTNAME]
+      ,[ISDELETED]
+      ,[ID])
+ VALUES ('{$i_ACCOUNTID}','{$i_LASTNAME}','{$i_FIRSTNAME}',{$i_ISDELETED},'{$i_ID}')</statement>
+                     </sqlStatement>
+                  </binding>
+                  <output/>
+               </action>
+            </dasActions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="dataAccessResponse">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="statementId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="row" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">row</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="row">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="storecode" nullable="true" required="false" type="string"/>
+                     <field name="state" nullable="true" required="false" type="string"/>
+                     <field name="date" nullable="true" required="false" type="datetime"/>
+                     <field name="invoicenbr" nullable="true" required="false" type="int"/>
+                     <field name="unit_price"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="sku" nullable="true" required="false" type="int"/>
+                     <field name="salesqty" nullable="true" required="false" type="int"/>
+                     <field name="total" nullable="true" required="false" type="double"/>
+                     <field name="tax" nullable="true" required="false" type="double"/>
+                     <field name="totalsalesamt"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="SF_CONTACT">
+                  <description/>
+                  <detail>
+                     <field name="SF_CONTACT_IID"
+                            nullable="true"
+                            required="false"
+                            type="string">
+                        <options/>
+                     </field>
+                     <field name="FIRSTNAME" nullable="true" required="false" type="string"/>
+                     <field name="LASTNAME" nullable="true" required="false" type="string">
+                        <options/>
+                     </field>
+                     <field name="ID" nullable="true" required="false" type="string"/>
+                     <field name="ISDELETED" nullable="true" required="false" type="int"/>
+                     <field name="ACCOUNTID" nullable="true" required="false" type="string">
+                        <options/>
+                     </field>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>5q86pxhQ4pHjd6Er9zz0A7</types1:GUID>
+      <types1:DisplayName>DAS_MN_SQL_CSA</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-10-11T17:50:03.854Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
