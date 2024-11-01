@@ -1,0 +1,141 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>DclzHfSTu0kMVX3-gt-52113891-2023-08-22T16:57:43.469Z::tf.xml</types1:EntryId>
+      <types1:Name>Taskflow3</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>masaki.dev</types1:CreatedBy>
+      <types1:CreationDate>2023-08-22T16:57:43Z</types1:CreationDate>
+      <types1:ModifiedBy>masaki.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2024-08-14T22:20:16Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>masaki.dev</types1:PublishedBy>
+      <types1:PublicationDate>2024-08-14T22:20:21Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.Taskflow3/Taskflow3.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="Taskflow3"
+                   name="Taskflow3"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="Ingestion Task 1" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:fit-local-S3-no-accelerator-43vr9OgUCJpb5vY6pKyZyj</option>
+                  </options>
+               </field>
+               <field description="" name="objectlist_fmi" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedUsers>
+                     <user>masaki.dev</user>
+                  </allowedUsers>
+               </rest>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">false</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="llmjtwm8" targetId="llmjtwmf"/>
+               </start>
+               <eventContainer id="llmjtwmf">
+                  <service id="llmjtwm7">
+                     <title>Ingestion Task 1</title>
+                     <serviceName>DIExecuteServiceTaskIngestionTaskImpl</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">fit_local_S3_no_accelerator</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">43vr9OgUCJpb5vY6pKyZyj</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MI_TASK</parameter>
+                        <parameter name="serviceProviderId" source="constant" updatable="true">filelistener</parameter>
+                        <parameter name="serviceProviderContextPath"
+                                   source="constant"
+                                   updatable="true">mitask/</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="fit-local-S3-no-accelerator-43vr9OgUCJpb5vY6pKyZyj">temp.Ingestion Task 1</operation>
+                           <operation source="constant"
+                                      to="fit-local-S3-no-accelerator-43vr9OgUCJpb5vY6pKyZyj/input[1]/CATEGORYGeneral[1]/sourceConnectionType">local</operation>
+                           <operation source="constant"
+                                      to="fit-local-S3-no-accelerator-43vr9OgUCJpb5vY6pKyZyj/input[1]/CATEGORYGeneral[1]/targetConnectionType">AmazonS3V2</operation>
+                           <operation source="constant"
+                                      to="fit-local-S3-no-accelerator-43vr9OgUCJpb5vY6pKyZyj/input[1]/CATEGORYGeneral[1]/maxFileLimit">0</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Ingestion Task 1/output/successFiles">successFiles</operation>
+                        <operation source="field" to="temp.Ingestion Task 1/output/failedFiles">failedFiles</operation>
+                        <operation source="field" to="temp.Ingestion Task 1/output/fileDetails">fileDetails</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="llmjtwn4" targetId="llmjtwn3"/>
+                  <events>
+                     <catch faultField="temp.Ingestion Task 1/fault"
+                            id="llmjtwme"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <assignment id="llmjtwn3">
+                  <title>Assignment 1</title>
+                  <operation source="constant" to="temp.objectlist_fmi">{$temp.IngestionTask1[1]/output[1]/successFiles}</operation>
+                  <link id="llmjtwn5" targetId="c"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="fit-local-S3-no-accelerator-43vr9OgUCJpb5vY6pKyZyj"
+                              isByCopy="true"
+                              name="fit-local-S3-no-accelerator-43vr9OgUCJpb5vY6pKyZyj">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>7iVLdcxvEUNljDSijtSAwi</types1:GUID>
+      <types1:DisplayName>Taskflow3</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-11-01T17:32:12.075Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
