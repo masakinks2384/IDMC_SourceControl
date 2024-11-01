@@ -1,0 +1,82 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>yIRJi4tciSrZMSP-gt-51319808-2023-10-26T22:45:03.9Z::po.xml</types1:EntryId>
+      <types1:Name>RstCustomeridRstServiceappointmentContactType-1</types1:Name>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>masaki.dev</types1:CreatedBy>
+      <types1:CreationDate>2023-10-26T22:45:04Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        xmlns:aetgt="http://schemas.informatica.com/socrates/processobject/factory/2019/07/internal/infaProcessObjectFactory.xsd"
+                        xmlns:internal2="http://schemas.informatica.com/socrates/processobject/factory/2019/07/internal/infaProcessObjectFactory.xsd"
+                        xmlns:ns2="http://schemas.active-endpoints.com/appmodules/screenflow/2011/07/avosCommon.xsd"
+                        isByCopy="true"
+                        name="RstCustomeridRstServiceappointmentContactType-1">
+            <description>This object was generated from [rst_customerid_rst_serviceappointment_contactType complex type] located in the [JSON-JayashreeV2.xsd] source XML schema.</description>
+            <detail>
+               <field label="firstname"
+                      name="firstname"
+                      nullable="true"
+                      type="string"/>
+               <field label="contactid"
+                      name="contactid"
+                      nullable="true"
+                      type="string"/>
+               <field label="_rst_physicaladdress_city_valueOData.Community.Display.V1.FormattedValue"
+                      name="_rst_physicaladdress_city_valueOData.Community.Display.V1.FormattedValue"
+                      nullable="true"
+                      type="string"/>
+               <field label="lastname" name="lastname" nullable="true" type="string"/>
+               <field label="emailaddress1"
+                      name="emailaddress1"
+                      nullable="true"
+                      type="string"/>
+               <field label="rst_physicaladdress_line1"
+                      name="rst_physicaladdress_line1"
+                      nullable="true"
+                      type="string"/>
+               <field label="_rst_physicaladdress_state_valueOData.Community.Display.V1.FormattedValue"
+                      name="_rst_physicaladdress_state_valueOData.Community.Display.V1.FormattedValue"
+                      nullable="true"
+                      type="string"/>
+               <field label="mobilephone"
+                      name="mobilephone"
+                      nullable="true"
+                      type="string"/>
+               <field label="_rst_customertypeid_value"
+                      name="_rst_customertypeid_value"
+                      nullable="true"
+                      type="string"/>
+               <field label="_rst_customertypeid_valueOData.Community.Display.V1.FormattedValue"
+                      name="_rst_customertypeid_valueOData.Community.Display.V1.FormattedValue"
+                      nullable="true"
+                      type="string"/>
+               <field label="_rst_physicaladdress_city_value"
+                      name="_rst_physicaladdress_city_value"
+                      nullable="true"
+                      type="string"/>
+               <field label="_rst_physicaladdress_state_value"
+                      name="_rst_physicaladdress_state_value"
+                      nullable="true"
+                      type="string"/>
+               <field label="rst_physicaladdress_zipcode"
+                      name="rst_physicaladdress_zipcode"
+                      nullable="true"
+                      type="int"/>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>fyk6UgdQBYzhpcojnLTdCn</types1:GUID>
+      <types1:DisplayName>RstCustomeridRstServiceappointmentContactType</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-11-01T17:30:17.362Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

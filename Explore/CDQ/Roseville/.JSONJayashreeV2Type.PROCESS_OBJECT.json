@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "1D1orfICEWVjjkRSlyhdMn",
+    "name" : "JSONJayashreeV2Type",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "COkSSHCwkNmumf6-gt-51153637-2023-10-26T22:45:05.445Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This object was generated from [JSON-JayashreeV2Type complex type] located in the [JSON-JayashreeV2.xsd] source XML schema.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-11-01T17:30:18.860Z",
+  "objectRefs" : [ {
+    "id" : "fyk6UgdQBYzhpcojnLTdCn",
+    "name" : "RstCustomeridRstServiceappointmentContactType",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "yIRJi4tciSrZMSP-gt-51319808-2023-10-26T22:45:03.9Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This object was generated from [rst_customerid_rst_serviceappointment_contactType complex type] located in the [JSON-JayashreeV2.xsd] source XML schema.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CDQ/Roseville"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
