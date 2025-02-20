@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "0pIpAH9A6XxfH993KQaVCs",
+    "name" : "get order by id process",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "O5Zqzm5Y6tMFygl-gt-76054969-2023-06-05T23:18:37.655Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-02-20T17:26:03.652Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

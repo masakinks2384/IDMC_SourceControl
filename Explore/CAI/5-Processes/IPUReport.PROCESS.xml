@@ -1,0 +1,285 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>q9bdsreK8ZAZf5k-gt-78915515-2024-09-13T22:14:24.264Z::pd.xml</types1:EntryId>
+      <types1:Name>IPUReport-2</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>masaki.dev</types1:CreatedBy>
+      <types1:CreationDate>2024-09-13T22:14:24Z</types1:CreationDate>
+      <types1:ModifiedBy>masaki.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2024-09-17T15:46:21Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>masaki.dev</types1:PublishedBy>
+      <types1:PublicationDate>2024-09-17T15:48:28Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.IPUReport-2/IPUReport-2.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="IPUReport"
+                  name="IPUReport-2"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="startDate" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="endDate" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="Out_Status" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tmp_download" type="attachments">
+                  <options>
+                     <option name="count">10</option>
+                     <option name="maxsize">5242880</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_email" type="reference">
+                  <options>
+                     <option name="referenceTo">ac-Email-brevo:EmailTaskInput</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">8A1cCce2XCffaqQL5GmrsH</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_ExportStatus" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedUsers>
+                     <user>masaki.dev</user>
+                  </allowedUsers>
+               </rest>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyStringAsNull">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
+            </extData>
+            <flow id="m15aaa777-cecd-4d76-b41f-7204a780eb72">
+               <start id="zf55e7cf9-83ae-4371-b6fb-702bfd92702f">
+                  <link id="kfc457937-0617-48f3-a5b6-89e1a7e90591"
+                        targetId="Service9b2d5b5b-8be1-4c38-b069-02631737c723"/>
+               </start>
+               <service id="Service9b2d5b5b-8be1-4c38-b069-02631737c723">
+                  <title>IDMC_Login</title>
+                  <serviceName>ac-IDMC-APIV2-1:Login</serviceName>
+                  <serviceGUID>i7j6oCtvx4vlmWpH3z85kA</serviceGUID>
+                  <serviceInput/>
+                  <link id="mf7c5f9fd-2e25-411e-a597-2a8c1f4682ef"
+                        targetId="a16ECgvQ8YUiZgu6irINq9yC-lulm8r40"/>
+               </service>
+               <service id="a16ECgvQ8YUiZgu6irINq9yC-lrasnq0t">
+                  <title>ExportMeteringData_Status</title>
+                  <serviceName>ac-IPU-Report-Export:ExportMeteringData_Status</serviceName>
+                  <serviceGUID>0yVD1svQkLShI9p3rD7hqT</serviceGUID>
+                  <serviceInput>
+                     <parameter name="in_JobIDEM" source="field" updatable="true">output.out_jobid</parameter>
+                     <parameter name="icSessionId" source="field" updatable="true">output.ICS Session ID</parameter>
+                  </serviceInput>
+                  <link id="m15qozw4" targetId="m15qozw3"/>
+               </service>
+               <eventContainer id="a16ECgvQ8YUiZgu6irINq9yC-lulm8r40">
+                  <service id="na7d6f70b-29a4-40e2-b4b3-b41112bcf35f">
+                     <title>ExportMeteringDataAllLinkedOrgsAcrossRegion</title>
+                     <serviceName>ac-IPU-Report-Export:ExportMeteringDataAllLinkedOrgsAcrossRegion</serviceName>
+                     <serviceGUID>0yVD1svQkLShI9p3rD7hqT</serviceGUID>
+                     <serviceInput>
+                        <parameter name="icSessionId" source="field" updatable="true">output.ICS Session ID</parameter>
+                        <parameter name="in_startDate" source="field" updatable="true">input.startDate</parameter>
+                        <parameter name="in_endDate" source="field" updatable="true">input.endDate</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="l0b264aac-55d8-45c5-887f-67cf17bdfd43">
+                     <link id="g9b3bbdf5-98e9-4b3b-b818-656d5bd1f8bc"
+                           targetId="a16ECgvQ8YUiZgu6irINq9yC-lulm8r40"
+                           type="containerLink"/>
+                  </flow>
+                  <flow id="q28224c9b-ad2e-4c80-9a4d-cb98cfac0d4e">
+                     <throw id="a16ECgvQ8YUiZgu6irINq9yC-lulm8r4c">
+                        <title>Throw 1</title>
+                        <throwInput>
+                           <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                           <parameter name="detail" source="field" updatable="true">output.faultInfo[1]/detail</parameter>
+                           <parameter name="reason" source="field" updatable="true">output.faultInfo[1]/reason</parameter>
+                        </throwInput>
+                     </throw>
+                  </flow>
+                  <link id="a1fe7237e-8c5d-4bdb-a842-b2a8677f53da"
+                        targetId="l0b264aac-55d8-45c5-887f-67cf17bdfd43"
+                        type="containerLink"/>
+                  <link id="m13xxv5w" targetId="a16ECgvQ8YUiZgu6irINq9yC-lrasnq0t"/>
+                  <events>
+                     <catch faultField="faultInfo"
+                            id="l8ad120e0-c44c-4cfa-8ccc-37e2d1ad0605"
+                            interrupting="true">
+                        <link id="wa6fe0895-d96c-41d5-929c-e3ecd84b5dfa"
+                              targetId="q28224c9b-ad2e-4c80-9a4d-cb98cfac0d4e"
+                              type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <assignment id="m15qozw3">
+                  <title>Assignment to tmp_ExportStatus</title>
+                  <operation source="field" to="temp.tmp_ExportStatus">output.out_Job_StatusEM</operation>
+                  <link id="m15qozw5" targetId="a16ECgvQ8YUiZgu6irINq9yC-lrasnq20"/>
+               </assignment>
+               <container id="a16ECgvQ8YUiZgu6irINq9yC-lrasnq20" type="exclusive">
+                  <title>out_job_statusEM</title>
+                  <flow id="aa26e2751-a138-489b-9ee6-cb0053ba28b3">
+                     <wait id="a16ECgvQ8YUiZgu6irINq9yC-lrkt7f41">
+                        <title>Wait for 20 sec</title>
+                        <duration source="formula">
+                           <function name="duration_expression">
+                              <arg name="value">20</arg>
+                              <arg name="scale">S</arg>
+                              <arg name="businessDays"/>
+                           </function>
+                        </duration>
+                        <link id="x2ba0ef28-db30-4234-8fe9-c47a22881b0f"
+                              targetId="a16ECgvQ8YUiZgu6irINq9yC-lrks8k6h"/>
+                     </wait>
+                     <jumpTo id="a16ECgvQ8YUiZgu6irINq9yC-lrks8k6h">
+                        <link id="dadef0cc4-44a5-4ce4-993d-1422fce03a32"
+                              targetId="a16ECgvQ8YUiZgu6irINq9yC-lrasnq0t"/>
+                     </jumpTo>
+                  </flow>
+                  <flow id="g0063c0d9-0d89-4bc9-a179-99c479052a70">
+                     <service id="a16ECgvQ8YUiZgu6irINq9yC-lrks8k6s">
+                        <title>Download IPU Report</title>
+                        <serviceName>ac-IPU-Report-Export:Download</serviceName>
+                        <serviceGUID>0yVD1svQkLShI9p3rD7hqT</serviceGUID>
+                        <serviceInput>
+                           <parameter name="icSessionId" source="field" updatable="true">output.ICS Session ID</parameter>
+                           <parameter name="in_JobIDEMDNLD" source="field" updatable="true">output.out_jobid</parameter>
+                        </serviceInput>
+                        <link id="m154q9wm" targetId="m154q9wl"/>
+                     </service>
+                     <container id="m154q9wl" type="parallel">
+                        <title>Parallel Paths 1</title>
+                        <flow id="m154q9wp">
+                           <assignment id="m15fhyd6">
+                              <title>Assignment to tmp_download</title>
+                              <operation source="field" to="temp.tmp_download">output.Download</operation>
+                              <link id="m15fhyd7" targetId="m154q9wz"/>
+                           </assignment>
+                           <assignment id="m154q9wz">
+                              <title>Assignment to Recipient Addresses, Subject etc.</title>
+                              <operation source="constant" to="temp.tmp_email[1]/to">mnakasima@informatica.com</operation>
+                              <operation source="formula" to="temp.tmp_email[1]/subject">
+                                 <expression language="XQuery">'Summary IPU usage: '|| fn:substring-before($input.startDate, 'T') || '- to -' || fn:substring-before($input.endDate, 'T') </expression>
+                              </operation>
+                              <operation source="formula" to="temp.tmp_email[1]/body">
+                                 <expression language="XQuery">'Summary IPU usage data attached to this email' || '&amp;#xa;' || '&amp;#xa;' || 'CAI Prcess ID: ' || util:getAssetName() || ': ' || util:getProcessId()</expression>
+                              </operation>
+                              <operation source="constant" to="temp.tmp_email[1]/attachments[1]/name">IPUMeter.zip</operation>
+                              <operation source="constant" to="temp.tmp_email[1]/attachments[1]/mimeType">application/zip</operation>
+                              <operation source="formula" to="temp.tmp_email[1]/attachments[1]/content">
+                                 <expression language="XQuery">$temp.tmp_download </expression>
+                              </operation>
+                              <link id="m154q9xd" targetId="m154q9xc"/>
+                           </assignment>
+                           <assignment id="m154q9xp">
+                              <title>Assignment to Status</title>
+                              <operation source="constant" to="output.Out_Status">Report Succesfully sent</operation>
+                           </assignment>
+                           <service id="m154q9xc">
+                              <title>sendEmailService</title>
+                              <serviceName>ac-Email-brevo:sendEmailService</serviceName>
+                              <serviceGUID>8A1cCce2XCffaqQL5GmrsH</serviceGUID>
+                              <serviceInput>
+                                 <parameter name="emailTaskInput" source="field" updatable="true">temp.tmp_email</parameter>
+                              </serviceInput>
+                              <link id="m154q9xq" targetId="m154q9xp"/>
+                           </service>
+                           <link id="m154q9wq" targetId="m154q9wl" type="containerLink"/>
+                        </flow>
+                        <flow id="m154q9ws">
+                           <service id="m154q9y2">
+                              <title>IDMC_Logout</title>
+                              <serviceName>ac-IDMC-APIV2-1:Logout</serviceName>
+                              <serviceGUID>i7j6oCtvx4vlmWpH3z85kA</serviceGUID>
+                              <serviceInput>
+                                 <parameter name="icsSessionUrl" source="field" updatable="true">output.ICS Server URL</parameter>
+                                 <parameter name="icSessionId" source="field" updatable="true">output.ICS Session ID</parameter>
+                              </serviceInput>
+                           </service>
+                           <link id="m154q9wt" targetId="m154q9wl" type="containerLink"/>
+                        </flow>
+                        <link id="m154q9wo" targetId="m154q9wp" type="containerLink"/>
+                        <link id="m154q9wr" targetId="m154q9ws" type="containerLink"/>
+                     </container>
+                     <link id="o4ecca9d8-c636-4fd4-b6a8-f037dcba1532"
+                           targetId="a16ECgvQ8YUiZgu6irINq9yC-lrasnq20"
+                           type="containerLink"/>
+                  </flow>
+                  <link id="t74ad140e-cb62-4475-ba74-3b4c570f37a0"
+                        targetId="aa26e2751-a138-489b-9ee6-cb0053ba28b3"
+                        type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$temp.tmp_ExportStatus}</arg>
+                           <arg name="right">CREATED</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="k922d5164-31f8-4237-8cdd-fcde00b4b258"
+                        targetId="g0063c0d9-0d89-4bc9-a179-99c479052a70"
+                        type="containerLink"/>
+                  <link id="s6bec4335-c22a-4aa8-a7bf-235a7941b34d"
+                        targetId="a16ECgvQ8YUiZgu6irINq9yC-c"/>
+               </container>
+               <end id="a16ECgvQ8YUiZgu6irINq9yC-c">
+                  <title>End</title>
+               </end>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>8632c450-b15d-42ea-9a06-331fb7f0f28d</ns1:Id>
+               <ns1:Name>Test1-August</ns1:Name>
+               <ns1:CreatedBy>masaki.dev</ns1:CreatedBy>
+               <ns1:CreationDate>2024-09-15T17:01:06Z</ns1:CreationDate>
+               <ns1:ModifiedBy>masaki.dev</ns1:ModifiedBy>
+               <ns1:ModificationDate>2024-09-17T15:56:38Z</ns1:ModificationDate>
+               <ns1:Data format="json">{
+	 "startDate": "2024-08-29T00:00:00Z",
+	 "endDate": "2024-09-28T23:59:59Z"
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>6ECgvQ8YUiZgu6irINq9yC</types1:GUID>
+      <types1:DisplayName>IPUReport</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-02-20T17:26:03.542Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

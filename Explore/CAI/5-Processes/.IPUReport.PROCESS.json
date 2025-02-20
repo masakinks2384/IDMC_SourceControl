@@ -1,0 +1,87 @@
+{
+  "objectInfo" : {
+    "id" : "6ECgvQ8YUiZgu6irINq9yC",
+    "name" : "IPUReport",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "q9bdsreK8ZAZf5k-gt-78915515-2024-09-13T22:14:24.264Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-02-20T17:26:03.651Z",
+  "objectRefs" : [ {
+    "id" : "8A1cCce2XCffaqQL5GmrsH",
+    "name" : "ac-Email-brevo",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "n478OHDvGFaaaaa-gt-85087298-2024-09-15T18:19:27.221Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CAI/2-Application Connectors"
+  }, {
+    "id" : "0yVD1svQkLShI9p3rD7hqT",
+    "name" : "ac-IPU-Report-Export",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "eHH0thJ6gaabclv-gt-78890583-2024-09-13T22:14:23.073Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CAI/2-Application Connectors"
+  }, {
+    "id" : "i7j6oCtvx4vlmWpH3z85kA",
+    "name" : "ac-IDMC-APIV2",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "XdvB8aabbgdoGsF-gt-1962885-2023-11-22T16:41:03.679Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CAI/2-Application Connectors"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
