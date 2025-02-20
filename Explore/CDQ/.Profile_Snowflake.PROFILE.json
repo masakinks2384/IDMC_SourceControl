@@ -1,0 +1,67 @@
+{
+  "objectInfo" : {
+    "id" : "49t1m4fyagNjuvHS4ZUCA5",
+    "name" : "Profile_Snowflake",
+    "type" : "PROFILE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "214d495d-84b4-490c-b83a-fcefdc17feb5"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "json",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2025-02-20T17:24:59.959Z",
+  "objectRefs" : [ {
+    "id" : "7giDmtQc4otlJgDSIKkG0R",
+    "name" : "SAG_OnPrem_Windows_CDI",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CHZJ25000000000002"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "1JaIBb4bmFHkA0FQfvzk0i",
+    "name" : "MN_Snowflake_GCS_CMI",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CHZJ0B00000000000A"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "db=GCSCLIENT_MEMORY_LIMIT=7000CLIENT_METADATA_REQUEST_USE_CONNECTION_CTX=TRUECLIENT_ENABLE_CONSERVATIVE_MEMORY_USAGE=FALSE",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

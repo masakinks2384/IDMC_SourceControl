@@ -1,24 +1,26 @@
 {
   "objectInfo" : {
-    "id" : "asG7rrs4o9zkF3bBObmqSs",
-    "name" : "CDQ",
-    "type" : "Project",
+    "id" : "62FjlD7NshtkkoQPasoHKj",
+    "name" : "rs_Result Quality_descriptions",
+    "type" : "RULE_SPECIFICATION",
     "metadata" : {
       "modelVersion" : {
-        "major" : 0,
+        "major" : 1,
         "minor" : 0
       },
-      "repoInfo" : null,
+      "repoInfo" : {
+        "repoHandle" : "62FjlD7NshtkkoQPasoHKj"
+      },
       "contextAttributes" : [ ],
       "additionalInfo" : {
         "description" : "",
         "contentType" : "Binary",
-        "documentState" : "COMPLETE"
+        "documentState" : "VALID"
       }
     }
   },
   "dataFileExtension" : "json",
-  "updateTime" : "2025-02-20T17:24:59.958Z",
+  "updateTime" : "2025-02-20T17:24:59.959Z",
   "objectRefs" : [ ],
   "readableFileExtension" : null,
   "readableFilePresent" : false
