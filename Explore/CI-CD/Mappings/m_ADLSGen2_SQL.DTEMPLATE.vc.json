@@ -1,0 +1,517 @@
+{
+  "content" : {
+    "description" : "change",
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_ADLSGen2_SQL",
+    "links" : [
+      {
+        "link" : "Source -> Sorter_Unique"
+      },
+      {
+        "link" : "Exp_OnlyKeyFields -> Target"
+      },
+      {
+        "link" : "Sorter_Unique -> Exp_OnlyKeyFields"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2024-02-29T17:19:44.183Z",
+        "name" : "Source",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "infa_operation_type"
+            },
+            "name" : "infa_operation_type",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "infa_sortable_sequence"
+            },
+            "name" : "infa_sortable_sequence",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "infa_operation_time"
+            },
+            "name" : "infa_operation_time",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ORDERKEY"
+            },
+            "name" : "ORDERKEY",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CUSTKEY"
+            },
+            "name" : "CUSTKEY",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SHIPPRIORITY"
+            },
+            "name" : "SHIPPRIORITY",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "COMMENT"
+            },
+            "name" : "COMMENT",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "FileName"
+            },
+            "name" : "FileName",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 1024,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@8q5LNBJxH8ukra1enENtsQ",
+          "connectionName" : "MN_Personal_ADLSGen2",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "dataFormat" : {
+            "formatId" : "Flat",
+            "validateHSchema" : "false",
+            "attributes" : [
+              {
+                "name" : "delimiter",
+                "value" : ","
+              },
+              {
+                "name" : "escapeChar",
+                "value" : "\\"
+              },
+              {
+                "name" : "qualifier",
+                "value" : "\""
+              },
+              {
+                "name" : "qualifierMode",
+                "value" : "MINIMAL"
+              },
+              {
+                "name" : "disableEscapeChar",
+                "value" : "true"
+              },
+              {
+                "name" : "codePage",
+                "value" : "UTF-8"
+              },
+              {
+                "name" : "headerLineNumber",
+                "value" : "1"
+              },
+              {
+                "name" : "firstDataRow",
+                "value" : "2"
+              },
+              {
+                "name" : "targetHeader",
+                "value" : "With Header"
+              },
+              {
+                "name" : "importColumnFromFirstLine",
+                "value" : "true"
+              },
+              {
+                "name" : "generateHeader",
+                "value" : "true"
+              },
+              {
+                "name" : "fixedWidthMode",
+                "value" : "false"
+              },
+              {
+                "name" : "maxRowsToPreview",
+                "value" : "0"
+              }
+            ]
+          },
+          "object" : {
+            "name" : "mn-container/OracleCMI_TGT%2F/data%2F/501_ORDERS%2F/data%2F/2024-02-27-14-54-21%2F/501_ORDERS_20240227_145419727.csv",
+            "label" : "501_ORDERS_20240227_145419727.csv",
+            "objectName" : "501_ORDERS_20240227_145419727.csv",
+            "path" : "mn-container/OracleCMI_TGT%2F/data%2F/501_ORDERS%2F/data%2F/2024-02-27-14-54-21%2F/501_ORDERS_20240227_145419727.csv",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "FileName",
+                "fieldType" : "CONNECTOR",
+                "label" : "FileName",
+                "nativeName" : "FileName",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 1024,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "501_ORDERS_20240227_145419727.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "infa_operation_type",
+                "fieldType" : "PARSER",
+                "label" : "infa_operation_type",
+                "nativeName" : "infa_operation_type",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "501_ORDERS_20240227_145419727.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "infa_sortable_sequence",
+                "fieldType" : "PARSER",
+                "label" : "infa_sortable_sequence",
+                "nativeName" : "infa_sortable_sequence",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "501_ORDERS_20240227_145419727.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "infa_operation_time",
+                "fieldType" : "PARSER",
+                "label" : "infa_operation_time",
+                "nativeName" : "infa_operation_time",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "501_ORDERS_20240227_145419727.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "ORDERKEY",
+                "fieldType" : "PARSER",
+                "label" : "ORDERKEY",
+                "nativeName" : "ORDERKEY",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "501_ORDERS_20240227_145419727.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "CUSTKEY",
+                "fieldType" : "PARSER",
+                "label" : "CUSTKEY",
+                "nativeName" : "CUSTKEY",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "501_ORDERS_20240227_145419727.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "SHIPPRIORITY",
+                "fieldType" : "PARSER",
+                "label" : "SHIPPRIORITY",
+                "nativeName" : "SHIPPRIORITY",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "501_ORDERS_20240227_145419727.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "COMMENT",
+                "fieldType" : "PARSER",
+                "label" : "COMMENT",
+                "nativeName" : "COMMENT",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "501_ORDERS_20240227_145419727.csv"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2024-02-29T17:19:44.183Z",
+        "name" : "Target",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "true",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@1HkTEObo20ol2yaCsbsMch",
+          "connectionName" : "MN_SQL_CSA",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "ADLSGen2_SQL",
+            "label" : "ADLSGen2_SQL",
+            "path" : "ADLSGen2_SQL",
+            "retainMetadata" : "false"
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2024-02-29T17:26:10.357Z",
+        "name" : "Sorter_Unique",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Sorter Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Case Sensitive",
+            "value" : "true"
+          },
+          {
+            "name" : "Work Directory",
+            "value" : "$PMTempDir"
+          },
+          {
+            "name" : "Distinct",
+            "value" : "true"
+          },
+          {
+            "name" : "Null Treated Low",
+            "value" : "false"
+          },
+          {
+            "name" : "Transformation Scope",
+            "value" : "All Input"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "sorterMode" : "SIMPLE",
+        "sortEntries" : [
+          {
+            "ascending" : "true",
+            "fieldName" : "ORDERKEY"
+          },
+          {
+            "ascending" : "true",
+            "fieldName" : "CUSTKEY"
+          }
+        ]
+      },
+      {
+        "createTime" : "2024-02-29T17:26:46.483Z",
+        "name" : "Exp_OnlyKeyFields",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "ORDERKEY"
+                  },
+                  {
+                    "inputName" : "CUSTKEY"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-06-24 12:32:13 MST"
+}
