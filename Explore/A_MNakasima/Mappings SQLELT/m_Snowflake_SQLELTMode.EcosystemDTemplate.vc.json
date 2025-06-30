@@ -1,0 +1,838 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "documentType" : "ECOSYSTEM_MAPPING",
+    "name" : "m_Snowflake_SQLELTMode",
+    "links" : [
+      {
+        "link" : "Src_APDO_Sales -> Lkp_SITE_PROFILE"
+      },
+      {
+        "link" : "Lkp_SITE_PROFILE -> Agg_DateAndState"
+      },
+      {
+        "link" : "Agg_DateAndState -> Exp_Add_RandomUUID"
+      },
+      {
+        "link" : "Exp_Add_RandomUUID -> Tgt_APDO_Sales_Agg"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2024-04-03T00:59:00.495Z",
+        "name" : "Src_APDO_Sales",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "StoreCode"
+            },
+            "name" : "StoreCode",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "State"
+            },
+            "name" : "State",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Date"
+            },
+            "name" : "Date",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "InvoiceNbr"
+            },
+            "name" : "InvoiceNbr",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Unit_price"
+            },
+            "name" : "Unit_price",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SalesQty"
+            },
+            "name" : "SalesQty",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "TotalSalesAmt"
+            },
+            "name" : "TotalSalesAmt",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@1JaIBb4bmFHkA0FQfvzk0i",
+          "connectionName" : "MN_Snowflake_GCS_CMI",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "GCS/GCS_MN/APDO_Sales",
+            "label" : "APDO_Sales",
+            "objectName" : "APDO_Sales",
+            "objectType" : "table",
+            "path" : "GCS/GCS_MN/APDO_Sales",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "StoreCode",
+                "fieldType" : "CONNECTOR",
+                "label" : "StoreCode",
+                "nativeName" : "StoreCode",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "APDO_Sales"
+                  }
+                ]
+              },
+              {
+                "name" : "State",
+                "fieldType" : "CONNECTOR",
+                "label" : "State",
+                "nativeName" : "State",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "APDO_Sales"
+                  }
+                ]
+              },
+              {
+                "name" : "Date",
+                "fieldType" : "CONNECTOR",
+                "label" : "Date",
+                "nativeName" : "Date",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "APDO_Sales"
+                  }
+                ]
+              },
+              {
+                "name" : "InvoiceNbr",
+                "fieldType" : "CONNECTOR",
+                "label" : "InvoiceNbr",
+                "nativeName" : "InvoiceNbr",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "APDO_Sales"
+                  }
+                ]
+              },
+              {
+                "name" : "Unit_price",
+                "fieldType" : "CONNECTOR",
+                "label" : "Unit_price",
+                "nativeName" : "Unit_price",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "APDO_Sales"
+                  }
+                ]
+              },
+              {
+                "name" : "SalesQty",
+                "fieldType" : "CONNECTOR",
+                "label" : "SalesQty",
+                "nativeName" : "SalesQty",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "APDO_Sales"
+                  }
+                ]
+              },
+              {
+                "name" : "TotalSalesAmt",
+                "fieldType" : "CONNECTOR",
+                "label" : "TotalSalesAmt",
+                "nativeName" : "TotalSalesAmt",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "APDO_Sales"
+                  }
+                ]
+              }
+            ],
+            "objectAttributes" : [
+              {
+                "name" : "tableType",
+                "value" : "TABLE"
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2024-04-03T00:59:00.497Z",
+        "name" : "Tgt_APDO_Sales_Agg",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "AGG_Units"
+                  },
+                  {
+                    "inputName" : "src_Date"
+                  },
+                  {
+                    "inputName" : "STATE"
+                  },
+                  {
+                    "inputName" : "UUIID"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "createTarget" : "true",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "UUIID"
+            },
+            "name" : "UUIID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "AGG_Units"
+            },
+            "name" : "AGG_Units",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "STATE"
+            },
+            "name" : "STATE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 5,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "src_Date"
+            },
+            "name" : "src_Date",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@1JaIBb4bmFHkA0FQfvzk0i",
+          "connectionName" : "MN_Snowflake_GCS_CMI",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "GCS/GCS_MN/APDO_Sales_Aggv3",
+            "label" : "GCS/GCS_MN/APDO_Sales_Aggv3",
+            "path" : "GCS/GCS_MN/APDO_Sales_Aggv3",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "UUIID",
+                "fieldType" : "CONNECTOR",
+                "label" : "UUIID",
+                "nativeName" : "UUIID",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "APDO_Sales_Aggv3"
+                  }
+                ]
+              },
+              {
+                "name" : "AGG_Units",
+                "fieldType" : "CONNECTOR",
+                "label" : "AGG_Units",
+                "nativeName" : "AGG_Units",
+                "nativeType" : "number",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "APDO_Sales_Aggv3"
+                  }
+                ]
+              },
+              {
+                "name" : "STATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "STATE",
+                "nativeName" : "STATE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 5,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "APDO_Sales_Aggv3"
+                  }
+                ]
+              },
+              {
+                "name" : "src_Date",
+                "fieldType" : "CONNECTOR",
+                "label" : "Date",
+                "nativeName" : "Date",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "APDO_Sales_Aggv3"
+                  }
+                ]
+              }
+            ]
+          },
+          "runtimeAttributes" : {
+            "attributes" : [
+              {
+                "name" : "UpdateMode",
+                "value" : "Update As Update"
+              },
+              {
+                "name" : "Truncate Target Table",
+                "value" : "YES"
+              }
+            ]
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2024-04-03T01:00:12.299Z",
+        "name" : "Lkp_SITE_PROFILE",
+        "advancedProperties" : [
+          {
+            "name" : "Lookup caching enabled",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "true",
+                "include" : "true",
+                "bulkRenameOption" : {
+                  "literal" : "src_",
+                  "suffix" : "false"
+                }
+              }
+            ]
+          }
+        ],
+        "multipleMatchPolicy" : "Use Any Value",
+        "unconnected" : "false",
+        "useLabels" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "STORENAME"
+            },
+            "name" : "STORENAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "STREETADDRESS"
+            },
+            "name" : "STREETADDRESS",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 200,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CITY"
+            },
+            "name" : "CITY",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "STATE"
+            },
+            "name" : "STATE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 5,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PHONENBR"
+            },
+            "name" : "PHONENBR",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          }
+        ],
+        "inputPortNames" : null,
+        "lookupConditions" : [
+          {
+            "leftOperand" : "STORENAME",
+            "operator" : "=",
+            "rightOperand" : "src_StoreCode"
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@1JaIBb4bmFHkA0FQfvzk0i",
+          "connectionName" : "MN_Snowflake_GCS_CMI",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "GCS/GCS_MN/SITE_PROFILE",
+            "label" : "SITE_PROFILE",
+            "objectName" : "SITE_PROFILE",
+            "objectType" : "table",
+            "path" : "GCS/GCS_MN/SITE_PROFILE",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "STORENAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "STORENAME",
+                "nativeName" : "STORENAME",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SITE_PROFILE"
+                  }
+                ]
+              },
+              {
+                "name" : "STREETADDRESS",
+                "fieldType" : "CONNECTOR",
+                "label" : "STREETADDRESS",
+                "nativeName" : "STREETADDRESS",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 200,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SITE_PROFILE"
+                  }
+                ]
+              },
+              {
+                "name" : "CITY",
+                "fieldType" : "CONNECTOR",
+                "label" : "CITY",
+                "nativeName" : "CITY",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SITE_PROFILE"
+                  }
+                ]
+              },
+              {
+                "name" : "STATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "STATE",
+                "nativeName" : "STATE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 5,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SITE_PROFILE"
+                  }
+                ]
+              },
+              {
+                "name" : "PHONENBR",
+                "fieldType" : "CONNECTOR",
+                "label" : "PHONENBR",
+                "nativeName" : "PHONENBR",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SITE_PROFILE"
+                  }
+                ]
+              }
+            ],
+            "objectAttributes" : [
+              {
+                "name" : "tableType",
+                "value" : "TABLE"
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2024-04-03T01:00:48.637Z",
+        "name" : "Agg_DateAndState",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "fields" : [
+          {
+            "name" : "AGG_Units",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SUM( TO_NUMBER( src_SalesQty,10,2))"
+          }
+        ],
+        "groupByFieldsList" : {
+          "fields" : [
+            {
+              "fieldName" : "src_Date"
+            },
+            {
+              "fieldName" : "STATE"
+            }
+          ]
+        }
+      },
+      {
+        "createTime" : "2024-04-06T23:40:35.930Z",
+        "name" : "Exp_Add_RandomUUID",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "UUIID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "UUID_STRING()"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-06-30 13:39:23 MST"
+}
