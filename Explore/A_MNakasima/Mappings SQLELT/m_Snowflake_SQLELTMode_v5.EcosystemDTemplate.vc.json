@@ -2,7 +2,7 @@
   "content" : {
     "allowMaxFieldLength" : "false",
     "documentType" : "ECOSYSTEM_MAPPING",
-    "name" : "m_Snowflake_SQLELTMode_v5",
+    "name" : "m_Snowflake_SQLELTMode_v6",
     "links" : [
       {
         "link" : "Src_APDO_Sales -> Lkp_SITE_PROFILE"
