@@ -1,0 +1,50 @@
+{
+  "objectInfo" : {
+    "id" : "365yGNmS4CAiS0ndfScqaJ",
+    "name" : "m_IncrementalSQLServer_template - Copy 1",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CHZJ170000000000CQ"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Extracts data incrementally from a relational database table or view based on its sequence record unique ID and loads it to a dynamically created target. \n\nThe Mapping task extracts only new and changed records each time it runs.\n\nThe Mapping task extracts data from the relational table or view starting at the last saved sequence value. The last saved sequence value is stored in in-out parameter, v_max_value.\n\nIf you create a relational target, the Mapping task inserts data into the target table the first time it runs. Subsequent runs can load data using update or upsert operations. If you create a flat file target, the Mapping task re-creates the target file each time it runs.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-11-20T05:17:07.889Z",
+  "objectRefs" : [ {
+    "id" : "1JaIBb4bmFHkA0FQfvzk0i",
+    "name" : "MN_Snowflake_GCS_CMI",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CHZJ0B00000000000A"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "db=GCSCLIENT_MEMORY_LIMIT=7000CLIENT_METADATA_REQUEST_USE_CONNECTION_CTX=TRUECLIENT_ENABLE_CONSERVATIVE_MEMORY_USAGE=FALSE",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

@@ -1,0 +1,582 @@
+{
+  "content" : {
+    "description" : "Extracts data incrementally from a relational database table or view based on its sequence record unique ID and loads it to a dynamically created target. \n\nThe Mapping task extracts only new and changed records each time it runs.\n\nThe Mapping task extracts data from the relational table or view starting at the last saved sequence value. The last saved sequence value is stored in in-out parameter, v_max_value.\n\nIf you create a relational target, the Mapping task inserts data into the target table the first time it runs. Subsequent runs can load data using update or upsert operations. If you create a flat file target, the Mapping task re-creates the target file each time it runs.",
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_IncrementalSQLServer_template",
+    "specialCharacterSupport" : "false",
+    "links" : [
+      {
+        "link" : "agg_max_val -> exp_setVar"
+      },
+      {
+        "link" : "exp_setVar -> jnr_dummy",
+        "groupLink" : "DefaultGroup -> Master"
+      },
+      {
+        "link" : "exp_dummy -> jnr_dummy",
+        "groupLink" : "DefaultGroup -> Detail"
+      },
+      {
+        "link" : "src -> exp_cdc"
+      },
+      {
+        "link" : "src -> exp_dummy"
+      },
+      {
+        "link" : "exp_cdc -> srt"
+      },
+      {
+        "link" : "srt -> agg_max_val"
+      },
+      {
+        "link" : "jnr_dummy -> exp_add",
+        "groupLink" : "OutputGroup -> DefaultGroup"
+      },
+      {
+        "link" : "exp_add -> tgt"
+      }
+    ],
+    "parameters" : [
+      {
+        "description" : "Select the relational source connection or create a new connection.",
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Source",
+        "name" : "p_src_conn"
+      },
+      {
+        "description" : "Select the relational table or view that you want to read data from.",
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Source",
+        "name" : "p_src_object"
+      },
+      {
+        "description" : "Select the target connection or create a new connection.\n\nThe target connection can be the same as the source connection.",
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Target",
+        "name" : "p_tgt_conn"
+      },
+      {
+        "description" : "Select the object that you want to load data to. Click Create Target to create the target object the first time the Mapping task runs.\n\nIf the target is a relational target, the Mapping task inserts data into the target table the first time it runs. For subsequent runs, you have the following options:\n1. Keep previously loaded data in the target (default). Select the Insert operation, and disable the Truncate Table option.\n2. Keep only the current data. Select the Insert operation, and enable the Truncate Table option.\n3. Fully reload the target. Select the Insert operation, enable the Truncate Table option, and reset in-out parameter v_max_value to 1.\n\nIf the target is a file target, the Mapping task re-creates the file each time it runs.",
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Target",
+        "name" : "p_tgt_object"
+      },
+      {
+        "description" : "NOT USED",
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Incremental Extract Filter",
+        "name" : "p_filter",
+        "defaultValue" : {
+          "valueLiteral" : "[sequence field] > $$v_max_value"
+        }
+      },
+      {
+        "description" : "Optionally, create expressions that add fields to the target. For example, you might want to add a system timestamp field to each replicated record in the target. \n\nUse the built-in functions to create one or more expressions.\n\nIf you do not want to add additional fields, do not enter expressions here.",
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Optional Expression Fields",
+        "name" : "p_exp_fields"
+      },
+      {
+        "description" : "Select the sequence field from the relational source.",
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Source Sequence Field",
+        "name" : "p_cdc_field"
+      }
+    ],
+    "transformations" : [
+      {
+        "description" : "Selects all new rows from the relational table or view based in increment in the sequence column values. \n\nTo run this mapping, you must set the following parameters:\n• p_scr_connection - represents the relational database connection\n• p_src_object - represents the relational table or view to be replicated\n\nThe source filter compares each sequence value in the source object with the last saved sequence. The source filter is partially parameterized referring to p_cdc_field defined in the following downstream transformation. The last saved sequence is represented by in-out parameter, v_max_value.\n\nSource filter: $p_cdc_field$ > $$v_max_value",
+        "name" : "src",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "p_src_conn"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "p_src_object"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "MySQL",
+          "useDynamicFileName" : "false",
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false",
+            "advancedFilterCondition" : "$p_cdc_field$ > $$v_max_value"
+          }
+        }
+      },
+      {
+        "description" : "Creates an expression with constant value of '1' to be used in Joiner transformation downstream.",
+        "name" : "exp_dummy",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "false",
+                "names" : [
+                  {
+                    "inputName" : "INOUT_infa_max_value"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "zzzz_key",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "1"
+          }
+        ]
+      },
+      {
+        "description" : "Joins the original data pipeline and the record that contains the maximum sequence value.",
+        "name" : "jnr_dummy",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Cache Directory",
+            "value" : "$PMCacheDir"
+          },
+          {
+            "name" : "Null ordering in master",
+            "value" : "Null is Highest Value"
+          },
+          {
+            "name" : "Null ordering in detail",
+            "value" : "Null is Higest Value"
+          },
+          {
+            "name" : "Joiner Data Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Joiner Index Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Sorted Input",
+            "value" : "true"
+          },
+          {
+            "name" : "Master Sort Order",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Transformation Scope",
+            "value" : "All Input"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "Master",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "true",
+            "name" : "Detail",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "OutputGroup",
+            "output" : "true"
+          }
+        ],
+        "joinType" : "Normal Join",
+        "joinConditions" : [
+          {
+            "leftOperand" : "zzzz_agg_key",
+            "operator" : "=",
+            "rightOperand" : "zzzz_key"
+          }
+        ]
+      },
+      {
+        "description" : "Calculates the maximum value for the sequence in the incoming dataset. The next time the task runs, this value will be used as the starting number.\n\nTo improve performance, the Sorted Input property is enabled.",
+        "name" : "agg_max_val",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Sorted Input",
+            "value" : "true"
+          },
+          {
+            "name" : "Cache Directory",
+            "value" : "$PMCacheDir"
+          },
+          {
+            "name" : "Aggregator Data Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Aggregator Index Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Transformation Scope",
+            "value" : "All Input"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "fields" : [
+          {
+            "name" : "zzzz_agg_value",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "MAX(zzzz_cdc_field)"
+          }
+        ]
+      },
+      {
+        "description" : "Assigns the calculated highest sequence number to in-out parameter v_max_value to save the value for the next Mapping task run.\n",
+        "name" : "exp_setVar",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "bulkRenameOption" : {
+                  "literal" : "zzzz_",
+                  "suffix" : "false"
+                }
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "INOUT_infa_max_value",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SetVariable($$v_max_value, zzzz_agg_value)"
+          },
+          {
+            "name" : "zzzz_agg_key",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "1"
+          }
+        ]
+      },
+      {
+        "description" : "Creates an expression to represent the Redshift table or view sequence field. Incoming fields rules narrow down selection of fields to be passed downstream to integer or bigint data types only. It also excludes reserved field name 'INOUT_infa_max_value' from the list of incoming fields.\n\nTo run this mapping, you must set the following parameter:\n• p_cdc_field - represents the Redshift table or view sequence field",
+        "name" : "exp_cdc",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "types" : [
+                  {
+                    "type" : {
+                      "name" : "integer"
+                    }
+                  },
+                  {
+                    "type" : {
+                      "name" : "bigint"
+                    }
+                  }
+                ]
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "false",
+                "names" : [
+                  {
+                    "inputName" : "INOUT_infa_max_value"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "zzzz_cdc_field",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "$p_cdc_field$"
+          }
+        ]
+      },
+      {
+        "description" : "Sorts the data by the sequence field.\n\nSorting the data improves the performance of the downstream Aggregator transformation.",
+        "name" : "srt",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "zzzz_cdc_field"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "sorterMode" : "SIMPLE",
+        "sortEntries" : [
+          {
+            "ascending" : "true",
+            "fieldName" : "zzzz_cdc_field"
+          }
+        ]
+      },
+      {
+        "description" : "\"Adds optional expression fields to the target during Mapping task creation. For example, when creating a Mapping task you might want to add a system timestamp field to each replicated record in the target. If you do not want to add additional fields, this transformation acts as a pass-through transformation.\n\nTo add expression fields to the target during Mapping task creation, set the following parameter:\n• p_exp_fields - represents optional expressions that create additional target fields\"\n",
+        "name" : "exp_add",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "additionalFields$" : {
+          "name" : "p_exp_fields"
+        },
+        "windowConfigurationEnabled" : "false"
+      },
+      {
+        "description" : "\"Creates the target and loads data to it. \n\nTo run this mapping, you must set the following parameters:\n• p_tgt_conn - represents the target connection\n• p_tgt_object - represents the target object\n\nIf the target is a relational target, the Mapping task inserts data into the target table the first time it runs. For subsequent runs, you have the following options:\n\n1. Keep previously loaded data in the target (default).  Disable the Truncate Table option, and select one of the following operations:\na. If the timestamp field represents the created date for the record, select Insert.  \nb. If the timestamp field represents the last modified date for the record, select Upsert and configure the update columns.\n\n2. Keep only the current data. Select the Insert operation and enable the Truncate Table option.\n\n3. Fully reload the target. Select the Insert operation, enable the Truncate Table option, and reset or edit the value of in-out parameter, v_max_value.\n\nIf the target is a file target, the Mapping task re-creates the file each time it runs.\"\n",
+        "name" : "tgt",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "requestXmlSize",
+            "value" : "1024"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "p_tgt_conn"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "p_tgt_object"
+          },
+          "objectType" : "PARAMETERIZED",
+          "useDynamicFileName" : "false",
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      }
+    ],
+    "variables" : [
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "v_max_value",
+        "platformType" : {
+          "name" : "bigint"
+        },
+        "precision" : 19,
+        "retentionPolicy" : "ON_SUCCESS",
+        "scale" : 0,
+        "defaultValue" : "0",
+        "description" : "The first value to be inserted is 1"
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-11-19 22:17:06 MST"
+}
