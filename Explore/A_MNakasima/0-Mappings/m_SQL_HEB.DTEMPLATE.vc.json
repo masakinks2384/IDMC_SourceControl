@@ -1,0 +1,698 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_SQL_HEB",
+    "specialCharacterSupport" : "false",
+    "links" : [
+      {
+        "link" : "Source -> Target"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2025-10-01T17:33:13.671Z",
+        "name" : "Source",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "o_binary"
+            },
+            "name" : "o_binary",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 300,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "StoreCode"
+            },
+            "name" : "StoreCode",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "State"
+            },
+            "name" : "State",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Date"
+            },
+            "name" : "Date",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "InvoiceNbr"
+            },
+            "name" : "InvoiceNbr",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Unit_price"
+            },
+            "name" : "Unit_price",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SalesQty"
+            },
+            "name" : "SalesQty",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "TotalSalesAmt"
+            },
+            "name" : "TotalSalesAmt",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CurrentlyProcessedFileName"
+            },
+            "name" : "CurrentlyProcessedFileName",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@1JaIBb4bmFHkA0FQfvzk0i",
+          "connectionName" : "MN_Snowflake_GCS_CMI",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "GCS/GCS_MN/SALES",
+            "label" : "GCS/GCS_MN/SALES",
+            "objectName" : "SALES",
+            "objectType" : "table",
+            "path" : "GCS/GCS_MN/SALES",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "o_binary",
+                "fieldType" : "CONNECTOR",
+                "label" : "o_binary",
+                "nativeName" : "o_binary",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 300,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SALES"
+                  }
+                ]
+              },
+              {
+                "name" : "StoreCode",
+                "fieldType" : "CONNECTOR",
+                "label" : "StoreCode",
+                "nativeName" : "StoreCode",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SALES"
+                  }
+                ]
+              },
+              {
+                "name" : "State",
+                "fieldType" : "CONNECTOR",
+                "label" : "State",
+                "nativeName" : "State",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SALES"
+                  }
+                ]
+              },
+              {
+                "name" : "Date",
+                "fieldType" : "CONNECTOR",
+                "label" : "Date",
+                "nativeName" : "Date",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SALES"
+                  }
+                ]
+              },
+              {
+                "name" : "InvoiceNbr",
+                "fieldType" : "CONNECTOR",
+                "label" : "InvoiceNbr",
+                "nativeName" : "InvoiceNbr",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SALES"
+                  }
+                ]
+              },
+              {
+                "name" : "Unit_price",
+                "fieldType" : "CONNECTOR",
+                "label" : "Unit_price",
+                "nativeName" : "Unit_price",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SALES"
+                  }
+                ]
+              },
+              {
+                "name" : "SalesQty",
+                "fieldType" : "CONNECTOR",
+                "label" : "SalesQty",
+                "nativeName" : "SalesQty",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SALES"
+                  }
+                ]
+              },
+              {
+                "name" : "TotalSalesAmt",
+                "fieldType" : "CONNECTOR",
+                "label" : "TotalSalesAmt",
+                "nativeName" : "TotalSalesAmt",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SALES"
+                  }
+                ]
+              },
+              {
+                "name" : "CurrentlyProcessedFileName",
+                "fieldType" : "CONNECTOR",
+                "label" : "CurrentlyProcessedFileName",
+                "nativeName" : "CurrentlyProcessedFileName",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SALES"
+                  }
+                ]
+              }
+            ],
+            "objectAttributes" : [
+              {
+                "name" : "tableType",
+                "value" : "TABLE"
+              },
+              {
+                "name" : "storageSerPol",
+                "value" : "Optimized"
+              },
+              {
+                "name" : "tableFormat",
+                "value" : "Standard Table"
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-10-01T17:33:13.671Z",
+        "name" : "Target",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "StoreCode"
+            },
+            "name" : "StoreCode",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "State"
+            },
+            "name" : "State",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 2,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Date"
+            },
+            "name" : "Date",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "InvoiceNbr"
+            },
+            "name" : "InvoiceNbr",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Unit_price"
+            },
+            "name" : "Unit_price",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SalesQty"
+            },
+            "name" : "SalesQty",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "TotalSalesAmt"
+            },
+            "name" : "TotalSalesAmt",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CurrentlyProcessedFileName"
+            },
+            "name" : "CurrentlyProcessedFileName",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Load_tstmp"
+            },
+            "name" : "Load_tstmp",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@1HkTEObo20ol2yaCsbsMch",
+          "connectionName" : "MN_SQL_CSA",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "dbo/Sales",
+            "dbSchema" : "dbo",
+            "label" : "Sales",
+            "objectName" : "Sales",
+            "path" : "dbo/Sales",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "StoreCode",
+                "fieldType" : "CONNECTOR",
+                "label" : "StoreCode",
+                "nativeName" : "StoreCode",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/Sales"
+                  }
+                ]
+              },
+              {
+                "name" : "State",
+                "fieldType" : "CONNECTOR",
+                "label" : "State",
+                "nativeName" : "State",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 2,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/Sales"
+                  }
+                ]
+              },
+              {
+                "name" : "Date",
+                "fieldType" : "CONNECTOR",
+                "label" : "Date",
+                "nativeName" : "Date",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/Sales"
+                  }
+                ]
+              },
+              {
+                "name" : "InvoiceNbr",
+                "fieldType" : "CONNECTOR",
+                "label" : "InvoiceNbr",
+                "nativeName" : "InvoiceNbr",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/Sales"
+                  }
+                ]
+              },
+              {
+                "name" : "Unit_price",
+                "fieldType" : "CONNECTOR",
+                "label" : "Unit_price",
+                "nativeName" : "Unit_price",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/Sales"
+                  }
+                ]
+              },
+              {
+                "name" : "SalesQty",
+                "fieldType" : "CONNECTOR",
+                "label" : "SalesQty",
+                "nativeName" : "SalesQty",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/Sales"
+                  }
+                ]
+              },
+              {
+                "name" : "TotalSalesAmt",
+                "fieldType" : "CONNECTOR",
+                "label" : "TotalSalesAmt",
+                "nativeName" : "TotalSalesAmt",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/Sales"
+                  }
+                ]
+              },
+              {
+                "name" : "CurrentlyProcessedFileName",
+                "fieldType" : "CONNECTOR",
+                "label" : "CurrentlyProcessedFileName",
+                "nativeName" : "CurrentlyProcessedFileName",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/Sales"
+                  }
+                ]
+              },
+              {
+                "name" : "Load_tstmp",
+                "fieldType" : "CONNECTOR",
+                "label" : "Load_tstmp",
+                "nativeName" : "Load_tstmp",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/Sales"
+                  }
+                ]
+              }
+            ]
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-11-19 22:42:57 MST"
+}
