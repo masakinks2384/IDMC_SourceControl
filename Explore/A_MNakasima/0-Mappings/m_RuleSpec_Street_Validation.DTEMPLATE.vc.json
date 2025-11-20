@@ -1,0 +1,1889 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_RuleSpec_Street_Validation",
+    "specialCharacterSupport" : "false",
+    "links" : [
+      {
+        "link" : "RuleSpecification -> Target",
+        "groupLink" : "MappletOutputTx_Output -> DefaultGroup"
+      },
+      {
+        "link" : "Source -> RuleSpecification",
+        "groupLink" : "DefaultGroup -> Input group:"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2025-09-12T21:55:02.665Z",
+        "name" : "Source",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Id"
+            },
+            "name" : "Id",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IsDeleted"
+            },
+            "name" : "IsDeleted",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MasterRecordId"
+            },
+            "name" : "MasterRecordId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "AccountId"
+            },
+            "name" : "AccountId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LastName"
+            },
+            "name" : "LastName",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "FirstName"
+            },
+            "name" : "FirstName",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Salutation"
+            },
+            "name" : "Salutation",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Name"
+            },
+            "name" : "Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 121,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherStreet"
+            },
+            "name" : "OtherStreet",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherCity"
+            },
+            "name" : "OtherCity",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherState"
+            },
+            "name" : "OtherState",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherPostalCode"
+            },
+            "name" : "OtherPostalCode",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherCountry"
+            },
+            "name" : "OtherCountry",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherLatitude"
+            },
+            "name" : "OtherLatitude",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 15
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherLongitude"
+            },
+            "name" : "OtherLongitude",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 15
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherGeocodeAccuracy"
+            },
+            "name" : "OtherGeocodeAccuracy",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingStreet"
+            },
+            "name" : "MailingStreet",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingCity"
+            },
+            "name" : "MailingCity",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingState"
+            },
+            "name" : "MailingState",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingPostalCode"
+            },
+            "name" : "MailingPostalCode",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingCountry"
+            },
+            "name" : "MailingCountry",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingLatitude"
+            },
+            "name" : "MailingLatitude",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 15
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingLongitude"
+            },
+            "name" : "MailingLongitude",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 15
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingGeocodeAccuracy"
+            },
+            "name" : "MailingGeocodeAccuracy",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Phone"
+            },
+            "name" : "Phone",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Fax"
+            },
+            "name" : "Fax",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MobilePhone"
+            },
+            "name" : "MobilePhone",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "HomePhone"
+            },
+            "name" : "HomePhone",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherPhone"
+            },
+            "name" : "OtherPhone",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "AssistantPhone"
+            },
+            "name" : "AssistantPhone",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ReportsToId"
+            },
+            "name" : "ReportsToId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Email"
+            },
+            "name" : "Email",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Title"
+            },
+            "name" : "Title",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 128,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Department"
+            },
+            "name" : "Department",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "AssistantName"
+            },
+            "name" : "AssistantName",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LeadSource"
+            },
+            "name" : "LeadSource",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Birthdate"
+            },
+            "name" : "Birthdate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Description"
+            },
+            "name" : "Description",
+            "platformType" : {
+              "name" : "text"
+            },
+            "precision" : 32000,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OwnerId"
+            },
+            "name" : "OwnerId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CreatedDate"
+            },
+            "name" : "CreatedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "CreatedById"
+            },
+            "name" : "CreatedById",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LastModifiedDate"
+            },
+            "name" : "LastModifiedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastModifiedById"
+            },
+            "name" : "LastModifiedById",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SystemModstamp"
+            },
+            "name" : "SystemModstamp",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastActivityDate"
+            },
+            "name" : "LastActivityDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastCURequestDate"
+            },
+            "name" : "LastCURequestDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastCUUpdateDate"
+            },
+            "name" : "LastCUUpdateDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastViewedDate"
+            },
+            "name" : "LastViewedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastReferencedDate"
+            },
+            "name" : "LastReferencedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "EmailBouncedReason"
+            },
+            "name" : "EmailBouncedReason",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "EmailBouncedDate"
+            },
+            "name" : "EmailBouncedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "IsEmailBounced"
+            },
+            "name" : "IsEmailBounced",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PhotoUrl"
+            },
+            "name" : "PhotoUrl",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Jigsaw"
+            },
+            "name" : "Jigsaw",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "JigsawContactId"
+            },
+            "name" : "JigsawContactId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CleanStatus"
+            },
+            "name" : "CleanStatus",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IndividualId"
+            },
+            "name" : "IndividualId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Level__c"
+            },
+            "name" : "Level__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Languages__c"
+            },
+            "name" : "Languages__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Formula1_Team__c"
+            },
+            "name" : "Formula1_Team__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "INFA_LAST_REPLICATED"
+            },
+            "name" : "INFA_LAST_REPLICATED",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "INFA_CYCLE_ID"
+            },
+            "name" : "INFA_CYCLE_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@1HkTEObo20ol2yaCsbsMch",
+          "connectionName" : "MN_SQL_CSA",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "dbo/CDIR_SFDC_Contact",
+            "dbSchema" : "dbo",
+            "label" : "CDIR_SFDC_Contact",
+            "objectName" : "CDIR_SFDC_Contact",
+            "path" : "dbo/CDIR_SFDC_Contact",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Id",
+                "fieldType" : "CONNECTOR",
+                "label" : "Id",
+                "nativeName" : "Id",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "IsDeleted",
+                "fieldType" : "CONNECTOR",
+                "label" : "IsDeleted",
+                "nativeName" : "IsDeleted",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MasterRecordId",
+                "fieldType" : "CONNECTOR",
+                "label" : "MasterRecordId",
+                "nativeName" : "MasterRecordId",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "AccountId",
+                "fieldType" : "CONNECTOR",
+                "label" : "AccountId",
+                "nativeName" : "AccountId",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LastName",
+                "fieldType" : "CONNECTOR",
+                "label" : "LastName",
+                "nativeName" : "LastName",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "FirstName",
+                "fieldType" : "CONNECTOR",
+                "label" : "FirstName",
+                "nativeName" : "FirstName",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Salutation",
+                "fieldType" : "CONNECTOR",
+                "label" : "Salutation",
+                "nativeName" : "Salutation",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Name",
+                "nativeName" : "Name",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 121,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherStreet",
+                "fieldType" : "CONNECTOR",
+                "label" : "OtherStreet",
+                "nativeName" : "OtherStreet",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherCity",
+                "fieldType" : "CONNECTOR",
+                "label" : "OtherCity",
+                "nativeName" : "OtherCity",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherState",
+                "fieldType" : "CONNECTOR",
+                "label" : "OtherState",
+                "nativeName" : "OtherState",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherPostalCode",
+                "fieldType" : "CONNECTOR",
+                "label" : "OtherPostalCode",
+                "nativeName" : "OtherPostalCode",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherCountry",
+                "fieldType" : "CONNECTOR",
+                "label" : "OtherCountry",
+                "nativeName" : "OtherCountry",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherLatitude",
+                "fieldType" : "CONNECTOR",
+                "label" : "OtherLatitude",
+                "nativeName" : "OtherLatitude",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 15,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherLongitude",
+                "fieldType" : "CONNECTOR",
+                "label" : "OtherLongitude",
+                "nativeName" : "OtherLongitude",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 15,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherGeocodeAccuracy",
+                "fieldType" : "CONNECTOR",
+                "label" : "OtherGeocodeAccuracy",
+                "nativeName" : "OtherGeocodeAccuracy",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingStreet",
+                "fieldType" : "CONNECTOR",
+                "label" : "MailingStreet",
+                "nativeName" : "MailingStreet",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingCity",
+                "fieldType" : "CONNECTOR",
+                "label" : "MailingCity",
+                "nativeName" : "MailingCity",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingState",
+                "fieldType" : "CONNECTOR",
+                "label" : "MailingState",
+                "nativeName" : "MailingState",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingPostalCode",
+                "fieldType" : "CONNECTOR",
+                "label" : "MailingPostalCode",
+                "nativeName" : "MailingPostalCode",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingCountry",
+                "fieldType" : "CONNECTOR",
+                "label" : "MailingCountry",
+                "nativeName" : "MailingCountry",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingLatitude",
+                "fieldType" : "CONNECTOR",
+                "label" : "MailingLatitude",
+                "nativeName" : "MailingLatitude",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 15,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingLongitude",
+                "fieldType" : "CONNECTOR",
+                "label" : "MailingLongitude",
+                "nativeName" : "MailingLongitude",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 15,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingGeocodeAccuracy",
+                "fieldType" : "CONNECTOR",
+                "label" : "MailingGeocodeAccuracy",
+                "nativeName" : "MailingGeocodeAccuracy",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Phone",
+                "fieldType" : "CONNECTOR",
+                "label" : "Phone",
+                "nativeName" : "Phone",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Fax",
+                "fieldType" : "CONNECTOR",
+                "label" : "Fax",
+                "nativeName" : "Fax",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MobilePhone",
+                "fieldType" : "CONNECTOR",
+                "label" : "MobilePhone",
+                "nativeName" : "MobilePhone",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "HomePhone",
+                "fieldType" : "CONNECTOR",
+                "label" : "HomePhone",
+                "nativeName" : "HomePhone",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherPhone",
+                "fieldType" : "CONNECTOR",
+                "label" : "OtherPhone",
+                "nativeName" : "OtherPhone",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "AssistantPhone",
+                "fieldType" : "CONNECTOR",
+                "label" : "AssistantPhone",
+                "nativeName" : "AssistantPhone",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "ReportsToId",
+                "fieldType" : "CONNECTOR",
+                "label" : "ReportsToId",
+                "nativeName" : "ReportsToId",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Email",
+                "fieldType" : "CONNECTOR",
+                "label" : "Email",
+                "nativeName" : "Email",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Title",
+                "fieldType" : "CONNECTOR",
+                "label" : "Title",
+                "nativeName" : "Title",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 128,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Department",
+                "fieldType" : "CONNECTOR",
+                "label" : "Department",
+                "nativeName" : "Department",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "AssistantName",
+                "fieldType" : "CONNECTOR",
+                "label" : "AssistantName",
+                "nativeName" : "AssistantName",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LeadSource",
+                "fieldType" : "CONNECTOR",
+                "label" : "LeadSource",
+                "nativeName" : "LeadSource",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Birthdate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Birthdate",
+                "nativeName" : "Birthdate",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Description",
+                "fieldType" : "CONNECTOR",
+                "label" : "Description",
+                "nativeName" : "Description",
+                "nativeType" : "text",
+                "original" : "false",
+                "precision" : 32000,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OwnerId",
+                "fieldType" : "CONNECTOR",
+                "label" : "OwnerId",
+                "nativeName" : "OwnerId",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "CreatedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "CreatedDate",
+                "nativeName" : "CreatedDate",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "CreatedById",
+                "fieldType" : "CONNECTOR",
+                "label" : "CreatedById",
+                "nativeName" : "CreatedById",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LastModifiedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "LastModifiedDate",
+                "nativeName" : "LastModifiedDate",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LastModifiedById",
+                "fieldType" : "CONNECTOR",
+                "label" : "LastModifiedById",
+                "nativeName" : "LastModifiedById",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "SystemModstamp",
+                "fieldType" : "CONNECTOR",
+                "label" : "SystemModstamp",
+                "nativeName" : "SystemModstamp",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LastActivityDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "LastActivityDate",
+                "nativeName" : "LastActivityDate",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LastCURequestDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "LastCURequestDate",
+                "nativeName" : "LastCURequestDate",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LastCUUpdateDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "LastCUUpdateDate",
+                "nativeName" : "LastCUUpdateDate",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LastViewedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "LastViewedDate",
+                "nativeName" : "LastViewedDate",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LastReferencedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "LastReferencedDate",
+                "nativeName" : "LastReferencedDate",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "EmailBouncedReason",
+                "fieldType" : "CONNECTOR",
+                "label" : "EmailBouncedReason",
+                "nativeName" : "EmailBouncedReason",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "EmailBouncedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "EmailBouncedDate",
+                "nativeName" : "EmailBouncedDate",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "IsEmailBounced",
+                "fieldType" : "CONNECTOR",
+                "label" : "IsEmailBounced",
+                "nativeName" : "IsEmailBounced",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "PhotoUrl",
+                "fieldType" : "CONNECTOR",
+                "label" : "PhotoUrl",
+                "nativeName" : "PhotoUrl",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Jigsaw",
+                "fieldType" : "CONNECTOR",
+                "label" : "Jigsaw",
+                "nativeName" : "Jigsaw",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "JigsawContactId",
+                "fieldType" : "CONNECTOR",
+                "label" : "JigsawContactId",
+                "nativeName" : "JigsawContactId",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "CleanStatus",
+                "fieldType" : "CONNECTOR",
+                "label" : "CleanStatus",
+                "nativeName" : "CleanStatus",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "IndividualId",
+                "fieldType" : "CONNECTOR",
+                "label" : "IndividualId",
+                "nativeName" : "IndividualId",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Level__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Level__c",
+                "nativeName" : "Level__c",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Languages__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Languages__c",
+                "nativeName" : "Languages__c",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Formula1_Team__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Formula1_Team__c",
+                "nativeName" : "Formula1_Team__c",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "INFA_LAST_REPLICATED",
+                "fieldType" : "CONNECTOR",
+                "label" : "INFA_LAST_REPLICATED",
+                "nativeName" : "INFA_LAST_REPLICATED",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "INFA_CYCLE_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "INFA_CYCLE_ID",
+                "nativeName" : "INFA_CYCLE_ID",
+                "nativeType" : "numeric",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dbo/CDIR_SFDC_Contact"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-09-12T21:55:02.665Z",
+        "name" : "Target",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "true",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@1HkTEObo20ol2yaCsbsMch",
+          "connectionName" : "MN_SQL_CSA",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "CDIR_SFDC_Contact_Clean",
+            "label" : "CDIR_SFDC_Contact_Clean",
+            "path" : "CDIR_SFDC_Contact_Clean",
+            "retainMetadata" : "false"
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "true",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "true",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-09-12T21:56:19.679Z",
+        "name" : "RuleSpecification",
+        "advancedProperties" : [
+          {
+            "name" : "version",
+            "value" : "R37"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "Input group:",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "MappletOutputTx_Output",
+            "output" : "true"
+          }
+        ],
+        "documentId" : "@3IALVdZLCmZc05BufvxskA",
+        "ruleId" : "@3IALVdZLCmZc05BufvxskA",
+        "inputGroups" : [
+          {
+            "name" : "Input group:",
+            "fieldMappingMode" : "MANUAL",
+            "fieldMapping" : {
+              "fields" : [
+                {
+                  "name" : "MailingStreet",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "Input_Street_Line"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "inputFields" : {
+          "fieldList" : [
+            {
+              "name" : "Input_Street_Line",
+              "platformType" : {
+                "name" : "string"
+              },
+              "precision" : 500,
+              "scale" : 0
+            }
+          ]
+        },
+        "outputFields" : {
+          "fieldList" : [
+            {
+              "name" : "Validate_Street_Line",
+              "platformType" : {
+                "name" : "string"
+              },
+              "precision" : 100,
+              "scale" : 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-11-20 14:07:33 MST"
+}
