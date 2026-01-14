@@ -1,0 +1,138 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>xaaaaaaaaaaaaaa-gt-30026101-2025-02-28T05:31:18.374Z::pd.xml</types1:EntryId>
+      <types1:Name>p-SQLServer_Audit_INS</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SAG_OnPrem_Windows_CDI</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>masaki.dev</types1:CreatedBy>
+      <types1:CreationDate>2025-02-28T05:31:18Z</types1:CreationDate>
+      <types1:ModifiedBy>masaki.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2025-11-05T18:47:57Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>masaki.dev</types1:PublishedBy>
+      <types1:PublicationDate>2025-11-05T18:48:15Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.p-SQLServer_Audit_INS/p-SQLServer_Audit_INS.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="5AZ15adz9BrkHbEi8j1FM1"
+                  displayName="p-SQLServer_Audit_INS"
+                  name="p-SQLServer_Audit_INS"
+                  overrideAPIName="true">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.agent:SAG_OnPrem_Windows_CDI</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description=""
+                          name="pi_PO_Output_Parameters"
+                          required="false"
+                          type="reference">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">ac-DAS-SQLServer-IDMC-Audit:PO-Output-Parameters</option>
+                     <option name="guid">32sSRTCs3yukLSCEbPXkub</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="pi_PO_Fault"
+                          required="false"
+                          type="reference">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">ac-DAS-SQLServer-IDMC-Audit:PO-Fault</option>
+                     <option name="guid">32sSRTCs3yukLSCEbPXkub</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="pi_AssetName"
+                          required="false"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="pi_ProcessID"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="pi_UserName"
+                          required="false"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>SAG_OnPrem_Windows_CDI</targetLocation>
+               <rest/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyStringAsNull">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
+               <nvpair name="treatEmptyStringAsNull">true</nvpair>
+            </extData>
+            <flow id="i2c64a269-91ef-475a-8198-c43bc6025359">
+               <start id="rceb1cd2b-bf50-4ff3-9063-92fed5b31619">
+                  <link id="m770e0697-4078-430c-84fa-dfcc30b6aee5"
+                        targetId="a15AZ15adz9BrkHbEi8j1FM1-Createdfbbfca3-f551-44b3-b991-b0631cb99e94"/>
+               </start>
+               <create id="a15AZ15adz9BrkHbEi8j1FM1-Createdfbbfca3-f551-44b3-b991-b0631cb99e94">
+                  <title>IDMC_Audit</title>
+                  <entityName>ac-SQLServer-Audit:IDMC_Audit</entityName>
+                  <createInput>
+                     <parameter name="ProcessID" source="field" updatable="true">input.pi_ProcessID</parameter>
+                     <parameter name="AssetName" source="field" updatable="true">input.pi_AssetName</parameter>
+                     <parameter name="UserName" source="field" updatable="true">input.pi_UserName</parameter>
+                     <parameter name="Start_Time" source="field" updatable="true">input.pi_PO_Output_Parameters[1]/Start_Time</parameter>
+                     <parameter name="End_Time" source="field" updatable="true">input.pi_PO_Output_Parameters[1]/End_Time</parameter>
+                     <parameter name="Object_Name" source="field" updatable="true">input.pi_PO_Output_Parameters[1]/Object_Name</parameter>
+                     <parameter name="Run_Id" source="field" updatable="true">input.pi_PO_Output_Parameters[1]/Run_Id</parameter>
+                     <parameter name="Success_Source_Rows" source="field" updatable="true">input.pi_PO_Output_Parameters[1]/Success_Source_Rows</parameter>
+                     <parameter name="Success_Target_Rows" source="field" updatable="true">input.pi_PO_Output_Parameters[1]/Success_Target_Rows</parameter>
+                     <parameter name="Failed_Source_Rows" source="field" updatable="true">input.pi_PO_Output_Parameters[1]/Failed_Source_Rows</parameter>
+                     <parameter name="Failed_Target_Rows" source="field" updatable="true">input.pi_PO_Output_Parameters[1]/Failed_Target_Rows</parameter>
+                     <parameter name="FirstErrorCode" source="field" updatable="true">input.pi_PO_Output_Parameters[1]/FirstErrorCode</parameter>
+                     <parameter name="Log_Id" source="field" updatable="true">input.pi_PO_Output_Parameters[1]/Log_Id</parameter>
+                     <parameter name="Task_Id" source="field" updatable="true">input.pi_PO_Output_Parameters[1]/Task_Id</parameter>
+                     <parameter name="Task_Status" source="field" updatable="true">input.pi_PO_Output_Parameters[1]/Task_Status</parameter>
+                     <parameter name="TotalTransErrors" source="field" updatable="true">input.pi_PO_Output_Parameters[1]/TotalTransErrors</parameter>
+                     <parameter name="Error_Message" source="field" updatable="true">input.pi_PO_Output_Parameters[1]/Error_Message</parameter>
+                     <parameter name="fault_code" source="field" updatable="true">input.pi_PO_Fault[1]/code</parameter>
+                     <parameter name="fault_reason" source="field" updatable="true">input.pi_PO_Fault[1]/reason</parameter>
+                     <parameter name="fault_detail" source="field" updatable="true">input.pi_PO_Fault[1]/detail</parameter>
+                  </createInput>
+                  <link id="ve09b99e5-c44f-4e8a-9518-81bad7e389bb"
+                        targetId="a15AZ15adz9BrkHbEi8j1FM1-end-lc9d3bc00-3dce-4d50-8a36-0184752f8155"/>
+               </create>
+               <end id="a15AZ15adz9BrkHbEi8j1FM1-end-lc9d3bc00-3dce-4d50-8a36-0184752f8155">
+                  <title>End</title>
+               </end>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>5AZ15adz9BrkHbEi8j1FM1</types1:GUID>
+      <types1:DisplayName>p-SQLServer_Audit_INS</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2026-01-14T18:05:46.303Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

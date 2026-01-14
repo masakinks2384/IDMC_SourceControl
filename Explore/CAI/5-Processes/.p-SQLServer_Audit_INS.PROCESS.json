@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "5AZ15adz9BrkHbEi8j1FM1",
+    "name" : "p-SQLServer_Audit_INS",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "xaaaaaaaaaaaaaa-gt-30026101-2025-02-28T05:31:18.374Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2026-01-14T18:05:46.619Z",
+  "objectRefs" : [ {
+    "id" : "32sSRTCs3yukLSCEbPXkub",
+    "name" : "ac-DAS-SQLServer-IDMC-Audit",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "k6OnTTpOzEkhK6L-gt-30635345-2025-02-28T05:27:31.171Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CAI/2-Application Connectors"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
